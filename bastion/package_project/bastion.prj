@@ -31,7 +31,7 @@ urlcopy=11
 license=GPLv3
 
 [DEPS]
-deps=iptables squid ipset bind-utils apache squidanalyzer polkit
+deps=iptables squid ipset bind-utils apache squidanalyzer polkit sakura
 
 [META]
 meta=0
