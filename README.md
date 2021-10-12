@@ -3,7 +3,7 @@ Bastion - офисный фильтр сайтов
 Зависимости: `iptables squid ipset bind-utils apache squidanalyzer polkit sakura`
 
 Трёхуровневая фильтрация HTTP/HTTPS:
-+ Suid + Чёрные/Белые списки сайтов + VIP-пользователи
++ Squid + Чёрные/Белые списки сайтов + VIP-пользователи
 + IPTables + IPSet (блокировка хост=несколько IP) + словарная фильтрация
 + SquidAnalyzer - анализатор логов интренет-соединений
 
