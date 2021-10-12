@@ -1,0 +1,69 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tmainform.caption
+msgid "Bastion v0.1"
+msgstr ""
+
+#: tmainform.label1.caption
+msgid "Network:"
+msgstr ""
+
+#: tmainform.label10.caption
+msgid ""
+"Forced report: su, squid-analyzer\n"
+"Report URL: http://127.0.0.1/squidreport\n"
+msgstr ""
+
+#: tmainform.label2.caption
+msgid "LAN:"
+msgstr ""
+
+#: tmainform.label3.caption
+msgid "BlackList of websites"
+msgstr ""
+
+#: tmainform.label4.caption
+msgid "Squid:"
+msgstr ""
+
+#: tmainform.label5.caption
+msgid "IPTables:"
+msgstr ""
+
+#: tmainform.label6.caption
+msgid "VIP-clients (IP-Address)"
+msgstr ""
+
+#: tmainform.label7.caption
+msgid "WhiteList of websites"
+msgstr ""
+
+#: tmainform.label8.caption
+msgid "WAN:"
+msgstr ""
+
+#: tmainform.label9.caption
+msgid "Apache:"
+msgstr ""
+
+#: tmainform.newcertbtn.caption
+msgid "New Certificate"
+msgstr ""
+
+#: tmainform.restartbtn.caption
+msgid "Restart"
+msgstr ""
+
+#: tmainform.statictext1.caption
+msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
+msgstr ""
+
+#: unit1.screatecert
+msgid "Creating a certificate"
+msgstr ""
+
+#: unit1.snewcertwarn
+msgid "Would you like to create a new Squid certificate for installation on clients computers?"
+msgstr ""
+

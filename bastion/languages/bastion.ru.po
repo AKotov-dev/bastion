@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Bastion\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: alex_q_2000 (C) 2021\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: tmainform.caption
+msgid "Bastion v0.1"
+msgstr ""
+
+#: tmainform.label1.caption
+msgid "Network:"
+msgstr "Сеть:"
+
+#: tmainform.label10.caption
+msgid ""
+"Forced report: su, squid-analyzer\n"
+"Report URL: http://127.0.0.1/squidreport\n"
+msgstr ""
+"Срочный отчет: su, squid-analyzer\n"
+"URL отчета: http://127.0.0.1/squidreport\n"
+"\n"
+
+#: tmainform.label2.caption
+msgid "LAN:"
+msgstr ""
+
+#: tmainform.label3.caption
+msgid "BlackList of websites"
+msgstr "Черный список сайтов"
+
+#: tmainform.label4.caption
+msgid "Squid:"
+msgstr ""
+
+#: tmainform.label5.caption
+msgid "IPTables:"
+msgstr ""
+
+#: tmainform.label6.caption
+msgid "VIP-clients (IP-Address)"
+msgstr "VIP-клиенты (IP-адреса)"
+
+#: tmainform.label7.caption
+msgid "WhiteList of websites"
+msgstr "Белый список сайтов"
+
+#: tmainform.label8.caption
+msgid "WAN:"
+msgstr ""
+
+#: tmainform.label9.caption
+msgid "Apache:"
+msgstr ""
+
+#: tmainform.newcertbtn.caption
+msgid "New Certificate"
+msgstr "Новый сертификат"
+
+#: tmainform.restartbtn.caption
+msgid "Restart"
+msgstr "Рестарт"
+
+#: tmainform.statictext1.caption
+msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
+msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
+
+#: unit1.screatecert
+msgid "Creating a certificate"
+msgstr "Создание сертификата"
+
+#: unit1.snewcertwarn
+msgid "Would you like to create a new Squid certificate for installation on clients computers?"
+msgstr "Желаете создать новый сертификат Squid для установки на компьютеры клиентов?"
