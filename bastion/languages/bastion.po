@@ -6,7 +6,7 @@ msgid "Bastion"
 msgstr ""
 
 #: tmainform.label1.caption
-msgid "Network:"
+msgid "Network"
 msgstr ""
 
 #: tmainform.label10.caption
@@ -20,7 +20,7 @@ msgid "www"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "LAN:"
+msgid "LAN"
 msgstr ""
 
 #: tmainform.label3.caption
@@ -28,11 +28,11 @@ msgid "BlackList of websites"
 msgstr ""
 
 #: tmainform.label4.caption
-msgid "Squid:"
+msgid "Squid"
 msgstr ""
 
 #: tmainform.label5.caption
-msgid "IPTables:"
+msgid "IPTables"
 msgstr ""
 
 #: tmainform.label6.caption
@@ -44,11 +44,11 @@ msgid "WhiteList of websites"
 msgstr ""
 
 #: tmainform.label8.caption
-msgid "WAN:"
+msgid "WAN"
 msgstr ""
 
 #: tmainform.label9.caption
-msgid "Apache:"
+msgid "Apache"
 msgstr ""
 
 #: tmainform.newcertbtn.caption

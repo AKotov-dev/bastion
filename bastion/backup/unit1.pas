@@ -40,7 +40,6 @@ type
     Shape3: TShape;
     Shape4: TShape;
     StaticText1: TStaticText;
-    WWWText: TStaticText;
     XMLPropStorage1: TXMLPropStorage;
     procedure FormShow(Sender: TObject);
     procedure NewCertBtnClick(Sender: TObject);

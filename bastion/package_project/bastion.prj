@@ -72,5 +72,6 @@ toolversion=2.0.10
 [INFO]
 0=v0.2
 1=+ fixed status polling
-2=
-3=v0.1 - initial version
+2=+ www indicator (ping ya.ru)
+3=
+4=v0.1 - initial version

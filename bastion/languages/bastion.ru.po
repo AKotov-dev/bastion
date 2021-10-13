@@ -17,8 +17,8 @@ msgid "Bastion"
 msgstr ""
 
 #: tmainform.label1.caption
-msgid "Network:"
-msgstr "Сеть:"
+msgid "Network"
+msgstr "Сеть"
 
 #: tmainform.label10.caption
 msgid ""
@@ -34,7 +34,7 @@ msgid "www"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "LAN:"
+msgid "LAN"
 msgstr ""
 
 #: tmainform.label3.caption
@@ -42,11 +42,11 @@ msgid "BlackList of websites"
 msgstr "Черный список сайтов"
 
 #: tmainform.label4.caption
-msgid "Squid:"
+msgid "Squid"
 msgstr ""
 
 #: tmainform.label5.caption
-msgid "IPTables:"
+msgid "IPTables"
 msgstr ""
 
 #: tmainform.label6.caption
@@ -58,11 +58,11 @@ msgid "WhiteList of websites"
 msgstr "Белый список сайтов"
 
 #: tmainform.label8.caption
-msgid "WAN:"
+msgid "WAN"
 msgstr ""
 
 #: tmainform.label9.caption
-msgid "Apache:"
+msgid "Apache"
 msgstr ""
 
 #: tmainform.newcertbtn.caption
@@ -84,4 +84,3 @@ msgstr "Создание сертификата"
 #: unit1.snewcertwarn
 msgid "Would you like to create a new Squid certificate for installation on clients computers?"
 msgstr "Желаете создать новый сертификат Squid для установки на компьютеры клиентов?"
-

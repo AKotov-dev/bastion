@@ -135,24 +135,25 @@ object MainForm: TMainForm
     object Shape1: TShape
       AnchorSideLeft.Control = Label4
       AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label4
       AnchorSideBottom.Control = Label4
       AnchorSideBottom.Side = asrCenter
-      Left = 209
-      Height = 20
-      Top = 53
+      Left = 207
+      Height = 14
+      Top = 56
       Width = 12
-      Anchors = [akLeft, akBottom]
+      Anchors = [akTop, akLeft, akBottom]
       BorderSpacing.Left = 3
       Brush.Color = clYellow
       Shape = stCircle
     end
     object Label4: TLabel
-      Left = 166
+      Left = 168
       Height = 15
       Top = 56
-      Width = 40
+      Width = 36
       Anchors = [akTop]
-      Caption = 'Squid:'
+      Caption = 'Squid'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -161,24 +162,25 @@ object MainForm: TMainForm
     object Shape2: TShape
       AnchorSideLeft.Control = Label5
       AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label5
       AnchorSideBottom.Control = Label5
       AnchorSideBottom.Side = asrCenter
-      Left = 136
-      Height = 20
-      Top = 53
+      Left = 134
+      Height = 14
+      Top = 56
       Width = 12
-      Anchors = [akLeft, akBottom]
+      Anchors = [akTop, akLeft, akBottom]
       BorderSpacing.Left = 4
       Brush.Color = clYellow
       Shape = stCircle
     end
     object Label5: TLabel
-      Left = 75
+      Left = 77
       Height = 15
       Top = 56
-      Width = 57
+      Width = 53
       Anchors = [akTop]
-      Caption = 'IPTables:'
+      Caption = 'IPTables'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -198,13 +200,13 @@ object MainForm: TMainForm
     end
     object Label1: TLabel
       AnchorSideTop.Side = asrCenter
-      Left = 292
+      Left = 304
       Height = 15
       Top = 16
-      Width = 55
+      Width = 52
       Anchors = []
       BorderSpacing.Right = 3
-      Caption = 'Network:'
+      Caption = 'Network'
       ParentColor = False
     end
     object Edit1: TEdit
@@ -212,7 +214,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label1
       AnchorSideTop.Side = asrCenter
-      Left = 351
+      Left = 360
       Height = 36
       Top = 5
       Width = 140
@@ -237,7 +239,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label2
       AnchorSideTop.Side = asrCenter
-      Left = 186
+      Left = 185
       Height = 36
       Top = 5
       Width = 100
@@ -249,7 +251,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label8
       AnchorSideTop.Side = asrCenter
-      Left = 43
+      Left = 40
       Height = 36
       Top = 5
       Width = 100
@@ -257,13 +259,13 @@ object MainForm: TMainForm
     end
     object Label2: TLabel
       AnchorSideTop.Side = asrCenter
-      Left = 154
+      Left = 156
       Height = 15
       Top = 16
-      Width = 28
+      Width = 25
       Anchors = []
       BorderSpacing.Right = 4
-      Caption = 'LAN:'
+      Caption = 'LAN'
       ParentColor = False
     end
     object Label8: TLabel
@@ -272,18 +274,18 @@ object MainForm: TMainForm
       Left = 6
       Height = 15
       Top = 16
-      Width = 34
+      Width = 31
       BorderSpacing.Right = 3
-      Caption = 'WAN:'
+      Caption = 'WAN'
       ParentColor = False
     end
     object Label9: TLabel
-      Left = 239
+      Left = 241
       Height = 15
       Top = 56
-      Width = 52
+      Width = 48
       Anchors = [akTop]
-      Caption = 'Apache:'
+      Caption = 'Apache'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -292,13 +294,14 @@ object MainForm: TMainForm
     object Shape3: TShape
       AnchorSideLeft.Control = Label9
       AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label9
       AnchorSideBottom.Control = Label9
       AnchorSideBottom.Side = asrCenter
-      Left = 294
-      Height = 20
-      Top = 53
+      Left = 292
+      Height = 14
+      Top = 56
       Width = 12
-      Anchors = [akLeft, akBottom]
+      Anchors = [akTop, akLeft, akBottom]
       BorderSpacing.Left = 3
       Brush.Color = clYellow
       Shape = stCircle
@@ -332,13 +335,14 @@ object MainForm: TMainForm
     object Shape4: TShape
       AnchorSideLeft.Control = Label11
       AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label11
       AnchorSideBottom.Control = Label11
       AnchorSideBottom.Side = asrCenter
       Left = 43
-      Height = 20
-      Top = 53
+      Height = 14
+      Top = 56
       Width = 12
-      Anchors = [akLeft, akBottom]
+      Anchors = [akTop, akLeft, akBottom]
       BorderSpacing.Left = 4
       Brush.Color = clYellow
       Shape = stCircle
