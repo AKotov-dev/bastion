@@ -38,7 +38,6 @@ type
     Shape2: TShape;
     Shape3: TShape;
     StaticText1: TStaticText;
-    Timer1: TTimer;
     XMLPropStorage1: TXMLPropStorage;
     procedure FormShow(Sender: TObject);
     procedure NewCertBtnClick(Sender: TObject);

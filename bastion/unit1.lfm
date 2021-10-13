@@ -4,7 +4,7 @@ object MainForm: TMainForm
   Top = 125
   Width = 869
   ActiveControl = RestartBtn
-  Caption = 'Bastion v0.1'
+  Caption = 'Bastion'
   ClientHeight = 670
   ClientWidth = 869
   OnCreate = FormCreate
@@ -332,11 +332,6 @@ object MainForm: TMainForm
     ParentFont = False
     ParentColor = False
     TabOrder = 4
-  end
-  object Timer1: TTimer
-    Enabled = False
-    Left = 528
-    Top = 208
   end
   object XMLPropStorage1: TXMLPropStorage
     StoredValues = <>

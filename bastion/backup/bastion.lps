@@ -49,7 +49,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="49" Y="114"/>
+        <TopLine Value="83"/>
+        <CursorPos X="49" Y="113"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -66,34 +67,21 @@
       <Unit3>
         <Filename Value="status_trd.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="77"/>
         <CursorPos X="30" Y="107"/>
         <UsageCount Value="21"/>
-        <Loaded Value="True"/>
       </Unit3>
     </Units>
-    <JumpHistory Count="5" HistoryIndex="4">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
-        <Filename Value="status_trd.pas"/>
-        <Caret Line="112" Column="20" TopLine="85"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="114" Column="49" TopLine="84"/>
       </Position1>
       <Position2>
-        <Filename Value="status_trd.pas"/>
-        <Caret Line="8" Column="49"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="113" Column="49" TopLine="83"/>
       </Position2>
-      <Position3>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="8" Column="29"/>
-      </Position3>
-      <Position4>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="51" Column="28" TopLine="44"/>
-      </Position4>
-      <Position5>
-        <Filename Value="status_trd.pas"/>
-        <Caret Line="111" Column="33" TopLine="87"/>
-      </Position5>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

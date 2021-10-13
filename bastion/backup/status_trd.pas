@@ -88,23 +88,23 @@ end;
 //IPTables status
 procedure ShowStatus.ShowIPTables;
 begin
- // Application.ProcessMessages;
+  // Application.ProcessMessages;
   if Trim(Result[0]) = 'active' then
     MainForm.Shape2.Brush.Color := clLime
   else
     MainForm.Shape2.Brush.Color := clYellow;
- // MainForm.Shape2.Repaint;
+  // MainForm.Shape2.Repaint;
 end;
 
 //Squid status
 procedure ShowStatus.ShowSquid;
 begin
- // Application.ProcessMessages;
+  // Application.ProcessMessages;
   if Trim(Result[0]) = 'active' then
     MainForm.Shape1.Brush.Color := clLime
   else
     MainForm.Shape1.Brush.Color := clYellow;
- // MainForm.Shape1.Repaint;
+  // MainForm.Shape1.Repaint;
 end;
 
 //Apache status

@@ -333,11 +333,6 @@ object MainForm: TMainForm
     ParentColor = False
     TabOrder = 4
   end
-  object Timer1: TTimer
-    Enabled = False
-    Left = 528
-    Top = 208
-  end
   object XMLPropStorage1: TXMLPropStorage
     StoredValues = <>
     Left = 632

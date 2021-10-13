@@ -1,5 +1,5 @@
 {"version":1,"strings":[
-{"hash":42940945,"name":"tmainform.caption","sourcebytes":[66,97,115,116,105,111,110,32,118,48,46,49],"value":"Bastion v0.1"},
+{"hash":143306782,"name":"tmainform.caption","sourcebytes":[66,97,115,116,105,111,110],"value":"Bastion"},
 {"hash":172881043,"name":"tmainform.label3.caption","sourcebytes":[66,108,97,99,107,76,105,115,116,32,111,102,32,119,101,98,115,105,116,101,115],"value":"BlackList of websites"},
 {"hash":253793241,"name":"tmainform.label6.caption","sourcebytes":[86,73,80,45,99,108,105,101,110,116,115,32,40,73,80,45,65,100,100,114,101,115,115,41],"value":"VIP-clients (IP-Address)"},
 {"hash":222756931,"name":"tmainform.label7.caption","sourcebytes":[87,104,105,116,101,76,105,115,116,32,111,102,32,119,101,98,115,105,116,101,115],"value":"WhiteList of websites"},
