@@ -45,7 +45,6 @@ type
     procedure RestartBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
-    procedure Timer1Timer(Sender: TObject);
     procedure StartProcess;
   private
 
@@ -63,7 +62,7 @@ var
 
 implementation
 
-uses TRD_CMD;
+uses trd_cmd, status_trd;
 
 {$R *.lfm}
 
@@ -102,35 +101,17 @@ begin
   Memo3.Width := Memo1.Width;
 end;
 
-procedure TMainForm.Timer1Timer(Sender: TObject);
-var
-  S: ansistring;
-begin
-  if RunCommand('/bin/bash', ['-c', 'systemctl is-active squid'], S) then
-    if Trim(S) <> 'inactive' then
-      Shape1.Brush.Color := clLime
-    else
-      Shape1.Brush.Color := clYellow;
-
-  if RunCommand('/bin/bash', ['-c', 'systemctl is-active iptables'], S) then
-    if Trim(S) <> 'inactive' then
-      Shape2.Brush.Color := clLime
-    else
-      Shape2.Brush.Color := clYellow;
-
-  if RunCommand('/bin/bash', ['-c', 'systemctl is-active httpd'], S) then
-    if Trim(S) <> 'inactive' then
-      Shape3.Brush.Color := clLime
-    else
-      Shape3.Brush.Color := clYellow;
-end;
-
 procedure TMainForm.FormCreate(Sender: TObject);
 var
   S: ansistring;
+  FStartShowStatusThread: TThread;
 begin
   try
     MainForm.Caption := Application.Title;
+
+    //Запуск потока отображения статуса
+    FStartShowStatusThread := ShowStatus.Create(False);
+    FStartShowStatusThread.Priority := tpNormal;
 
     if not DirectoryExists(GetUserDir + '.config') then
       MkDir(GetUserDir + '/.config');
