@@ -15,6 +15,10 @@ msgid ""
 "Report URL: http://127.0.0.1/squidreport\n"
 msgstr ""
 
+#: tmainform.label11.caption
+msgid "www"
+msgstr ""
+
 #: tmainform.label2.caption
 msgid "LAN:"
 msgstr ""

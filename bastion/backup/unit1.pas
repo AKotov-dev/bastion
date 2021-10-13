@@ -19,6 +19,7 @@ type
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
+    Label11: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -37,7 +38,9 @@ type
     Shape1: TShape;
     Shape2: TShape;
     Shape3: TShape;
+    Shape4: TShape;
     StaticText1: TStaticText;
+    WWWText: TStaticText;
     XMLPropStorage1: TXMLPropStorage;
     procedure FormShow(Sender: TObject);
     procedure NewCertBtnClick(Sender: TObject);
@@ -61,7 +64,7 @@ var
 
 implementation
 
-uses trd_cmd, status_trd;
+uses trd_cmd, status_trd, ping_trd;
 
 {$R *.lfm}
 
@@ -103,10 +106,14 @@ end;
 procedure TMainForm.FormCreate(Sender: TObject);
 var
   S: ansistring;
-  FStartShowStatusThread: TThread;
+  FStartShowPingThread, FStartShowStatusThread: TThread;
 begin
   try
     MainForm.Caption := Application.Title;
+
+    //Запуск потока отображения ping
+    FStartShowPingThread := CheckPing.Create(False);
+    FStartShowPingThread.Priority := tpNormal;
 
     //Запуск потока отображения статуса
     FStartShowStatusThread := ShowStatus.Create(False);
@@ -175,14 +182,18 @@ begin
   XMLPropStorage1.Restore;
 end;
 
+//Создание сертификата
 procedure TMainForm.NewCertBtnClick(Sender: TObject);
 begin
   if MessageDlg(SNewCertWarn, mtConfirmation, mbOKCancel, 0) = mrOk then
+  begin
+    Application.ProcessMessages;
     StartProcess;
 
-  if FileExists('/etc/squid/squid.der') then
-    if SaveDialog1.Execute then
-      CopyFile('/etc/squid/squid.der', SaveDialog1.FileName, False);
+    if FileExists('/etc/squid/squid.der') then
+      if SaveDialog1.Execute then
+        CopyFile('/etc/squid/squid.der', SaveDialog1.FileName, False);
+  end;
 end;
 
 end.
