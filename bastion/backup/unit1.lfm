@@ -4,7 +4,7 @@ object MainForm: TMainForm
   Top = 125
   Width = 869
   ActiveControl = RestartBtn
-  Caption = 'Bastion v0.1'
+  Caption = 'Bastion'
   ClientHeight = 670
   ClientWidth = 869
   OnCreate = FormCreate

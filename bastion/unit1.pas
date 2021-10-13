@@ -175,14 +175,18 @@ begin
   XMLPropStorage1.Restore;
 end;
 
+//Создание сертификата
 procedure TMainForm.NewCertBtnClick(Sender: TObject);
 begin
   if MessageDlg(SNewCertWarn, mtConfirmation, mbOKCancel, 0) = mrOk then
+  begin
+    Application.ProcessMessages;
     StartProcess;
 
-  if FileExists('/etc/squid/squid.der') then
-    if SaveDialog1.Execute then
-      CopyFile('/etc/squid/squid.der', SaveDialog1.FileName, False);
+    if FileExists('/etc/squid/squid.der') then
+      if SaveDialog1.Execute then
+        CopyFile('/etc/squid/squid.der', SaveDialog1.FileName, False);
+  end;
 end;
 
 end.
