@@ -1,18 +1,18 @@
-Bastion - офисный фильтр сайтов
+Bastion - Website filter for the office network
 --
-Зависимости: `iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server`
+Dependencies: `iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server`
 
-Трёхуровневая фильтрация HTTP/HTTPS:
-+ Squid + Чёрные/Белые списки сайтов + VIP-пользователи
-+ IPTables + IPSet (блокировка хост=несколько IP) + словарная фильтрация
-+ SquidAnalyzer - анализатор логов интренет-соединений
+Three-level filtering HTTP/HTTPS:
++ Squid + Black/White lists of sites + VIP-users
++ IPTables + IPSet (blocking host=multiple IP) + dictionary filtering
++ SquidAnalyzer - internet connection log analyzer
 
-Физически состоит из двух частей:
-+ GUI (rpm-пакет, подтягивает все нужные зависимости)
-+ Архив файлов конфигураций (распаковывается вручную etc->etc)
+Physically it consists of two parts:
++ GUI (rpm-package, pulls up all the necessary dependencies)
++ Archive of configuration files (.tar.gz unpacked manually `etc->etc`)
 
-Настройте WAN/LAN на компьютере, выполняющем роль шлюза и запустите Bastion. Укажите имена интерфейсов, локальную сеть и нажмите кнопку `Новый сертификат`. После того, как сертификат будет создан, установите его в браузерах клиентов. Для моментального применения правил блокировки из списков или первого старта нажмите кнопку `Рестарт`. Удалённый доступ к серверу - `SSH:22` (интернет/локальная сеть). Порт 22 защищен от брутфорса: три неудачных пароля - блокировка на 60 секунд.
+Configure the `WAN/LAN` on the computer acting as the gateway and run `Bastion`. Specify the interface names, the local network and click the `New Certificate` button. After the certificate is created, install it in the client browsers. To instantly apply the blocking rules from the lists or the first start, click the `Restart` button. Remote access to the server is `SSH:22` (Internet/LAN). Port 22 is protected from brute force: three failed passwords are blocked for 60 seconds.
 
-Примечание: Bastion может быть настроен/запущен и без GUI (только скрипты). Mageia-8.
+Note: Bastion can be configured/run without GUI (scripts only).
 
 ![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot.png)
