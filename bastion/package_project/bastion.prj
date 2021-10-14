@@ -11,9 +11,10 @@ release=1.mga8
 group=Networking/Other
 
 [DESCRIPTION]
-0=Bastion - filtering traffic for a local network
-1=---
-2=More information: /usr/share/doc/package_name/repack.txt
+0=Website filter for the office network.
+1=Bastion has built-in Black/White lists of sites, IPTables + ip_set + xt_string
+2=---
+3=More information: /usr/share/doc/package_name/repack.txt
 
 [MAINTAINER]
 maintainer=Alex Kotov
@@ -22,7 +23,7 @@ maintainer=Alex Kotov
 vendor=alex_q_2000 (C) 2021
 
 [SUMMARY]
-summary=Bastion - filtering traffic for a local network
+summary=Bastion - Website filter for the office network
 
 [URLCOPY]
 urlcopy=https://github.com/AKotov-dev/bastion
