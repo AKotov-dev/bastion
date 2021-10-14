@@ -31,7 +31,7 @@ urlcopy=https://github.com/AKotov-dev/bastion
 license=GPLv3
 
 [DEPS]
-deps=iptables squid ipset bind-utils apache squidanalyzer polkit sakura
+deps=iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server multitail
 
 [META]
 meta=0
@@ -73,5 +73,6 @@ toolversion=2.0.10
 0=v0.2
 1=+ fixed status polling
 2=+ www indicator (ping ya.ru)
-3=
-4=v0.1 - initial version
+3=+ dependencies: openssh-server & multitail
+4=
+5=v0.1 - initial version
