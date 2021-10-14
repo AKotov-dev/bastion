@@ -5,7 +5,7 @@ name=bastion
 version=0.2
 
 [RELEASE]
-release=0.mga8
+release=1.mga8
 
 [GROUP]
 group=Networking/Other
