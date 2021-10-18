@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 
 #: tmainform.label11.caption
-msgid "www"
+msgid "WWW"
 msgstr ""
 
 #: tmainform.label2.caption
@@ -68,6 +68,6 @@ msgid "Creating a certificate"
 msgstr ""
 
 #: unit1.snewcertwarn
-msgid "Would you like to create a new Squid certificate for installation on clients computers?"
+msgid "Create a new squid.der certificate for installation on clients computers?"
 msgstr ""
 

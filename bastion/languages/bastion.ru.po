@@ -30,7 +30,7 @@ msgstr ""
 "\n"
 
 #: tmainform.label11.caption
-msgid "www"
+msgid "WWW"
 msgstr ""
 
 #: tmainform.label2.caption
@@ -82,5 +82,5 @@ msgid "Creating a certificate"
 msgstr "Создание сертификата"
 
 #: unit1.snewcertwarn
-msgid "Would you like to create a new Squid certificate for installation on clients computers?"
-msgstr "Желаете создать новый сертификат Squid для установки на компьютеры клиентов?"
+msgid "Create a new squid.der certificate for installation on clients computers?"
+msgstr "Создать новый сертификат squid.der для установки на компьютеры клиентов?"

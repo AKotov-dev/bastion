@@ -26,7 +26,7 @@ object MainForm: TMainForm
     BorderSpacing.Top = 5
     BorderSpacing.Right = 6
     ScrollBars = ssVertical
-    TabOrder = 0
+    TabOrder = 1
     WordWrap = False
   end
   object Label3: TLabel
@@ -74,7 +74,7 @@ object MainForm: TMainForm
     BorderSpacing.Top = 5
     BorderSpacing.Right = 6
     ScrollBars = ssVertical
-    TabOrder = 1
+    TabOrder = 3
     WordWrap = False
   end
   object Memo3: TMemo
@@ -118,13 +118,13 @@ object MainForm: TMainForm
     Align = alTop
     ClientHeight = 86
     ClientWidth = 827
-    TabOrder = 3
+    TabOrder = 0
     object RestartBtn: TBitBtn
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
       Left = 725
       Height = 30
-      Top = 7
+      Top = 5
       Width = 96
       Anchors = [akRight]
       BorderSpacing.Right = 6
@@ -138,7 +138,7 @@ object MainForm: TMainForm
       AnchorSideTop.Control = Label4
       AnchorSideBottom.Control = Label4
       AnchorSideBottom.Side = asrCenter
-      Left = 207
+      Left = 205
       Height = 14
       Top = 56
       Width = 12
@@ -148,7 +148,7 @@ object MainForm: TMainForm
       Shape = stCircle
     end
     object Label4: TLabel
-      Left = 168
+      Left = 166
       Height = 15
       Top = 56
       Width = 36
@@ -165,7 +165,7 @@ object MainForm: TMainForm
       AnchorSideTop.Control = Label5
       AnchorSideBottom.Control = Label5
       AnchorSideBottom.Side = asrCenter
-      Left = 134
+      Left = 136
       Height = 14
       Top = 56
       Width = 12
@@ -175,7 +175,7 @@ object MainForm: TMainForm
       Shape = stCircle
     end
     object Label5: TLabel
-      Left = 77
+      Left = 79
       Height = 15
       Top = 56
       Width = 53
@@ -190,7 +190,7 @@ object MainForm: TMainForm
       AnchorSideRight.Control = RestartBtn
       Left = 557
       Height = 30
-      Top = 7
+      Top = 5
       Width = 163
       Anchors = [akTop, akRight]
       BorderSpacing.Right = 5
@@ -200,7 +200,7 @@ object MainForm: TMainForm
     end
     object Label1: TLabel
       AnchorSideTop.Side = asrCenter
-      Left = 304
+      Left = 303
       Height = 15
       Top = 16
       Width = 52
@@ -214,7 +214,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label1
       AnchorSideTop.Side = asrCenter
-      Left = 360
+      Left = 359
       Height = 36
       Top = 5
       Width = 140
@@ -226,8 +226,8 @@ object MainForm: TMainForm
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
       Left = 691
-      Height = 16
-      Top = 62
+      Height = 15
+      Top = 63
       Width = 130
       Anchors = [akTop, akRight]
       BorderSpacing.Right = 6
@@ -280,7 +280,7 @@ object MainForm: TMainForm
       ParentColor = False
     end
     object Label9: TLabel
-      Left = 241
+      Left = 233
       Height = 15
       Top = 56
       Width = 48
@@ -297,7 +297,7 @@ object MainForm: TMainForm
       AnchorSideTop.Control = Label9
       AnchorSideBottom.Control = Label9
       AnchorSideBottom.Side = asrCenter
-      Left = 292
+      Left = 284
       Height = 14
       Top = 56
       Width = 12
@@ -325,8 +325,8 @@ object MainForm: TMainForm
       Left = 6
       Height = 15
       Top = 56
-      Width = 33
-      Caption = 'www'
+      Width = 39
+      Caption = 'WWW'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -338,7 +338,7 @@ object MainForm: TMainForm
       AnchorSideTop.Control = Label11
       AnchorSideBottom.Control = Label11
       AnchorSideBottom.Side = asrCenter
-      Left = 43
+      Left = 49
       Height = 14
       Top = 56
       Width = 12

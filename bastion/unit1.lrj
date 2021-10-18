@@ -12,6 +12,6 @@
 {"hash":23390,"name":"tmainform.label8.caption","sourcebytes":[87,65,78],"value":"WAN"},
 {"hash":75921893,"name":"tmainform.label9.caption","sourcebytes":[65,112,97,99,104,101],"value":"Apache"},
 {"hash":262115860,"name":"tmainform.label10.caption","sourcebytes":[70,111,114,99,101,100,32,114,101,112,111,114,116,58,32,115,117,44,32,115,113,117,105,100,45,97,110,97,108,121,122,101,114,10,82,101,112,111,114,116,32,85,82,76,58,32,104,116,116,112,58,47,47,49,50,55,46,48,46,48,46,49,47,115,113,117,105,100,114,101,112,111,114,116],"value":"Forced report: su, squid-analyzer\nReport URL: http://127.0.0.1/squidreport"},
-{"hash":32487,"name":"tmainform.label11.caption","sourcebytes":[119,119,119],"value":"www"},
+{"hash":23751,"name":"tmainform.label11.caption","sourcebytes":[87,87,87],"value":"WWW"},
 {"hash":247908389,"name":"tmainform.statictext1.caption","sourcebytes":[76,105,99,101,110,115,101,58,32,71,80,76,118,51,32,32,32,65,117,116,104,111,114,58,32,97,108,101,120,95,113,95,50,48,48,48,32,40,67,41,32,50,48,50,49,32,32,32,85,82,76,58,32,104,116,116,112,115,58,47,47,108,105,110,117,120,102,111,114,117,109,46,114,117],"value":"License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"}
 ]}

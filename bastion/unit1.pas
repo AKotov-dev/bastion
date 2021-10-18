@@ -55,7 +55,7 @@ type
 
 resourcestring
   SNewCertWarn =
-    'Would you like to create a new Squid certificate for installation on clients computers?';
+    'Create a new squid.der certificate for installation on clients computers?';
   SCreateCert = 'Creating a certificate';
 
 var
@@ -139,7 +139,7 @@ begin
     Memo1.Lines.LoadFromFile('/etc/squid/blacklist.txt');
     Memo3.Lines.LoadFromFile('/etc/squid/whitelist.txt');
     Memo2.Lines.LoadFromFile('/etc/squid/vip-users.txt');
-  finally
+  except
   end;
 end;
 
@@ -172,7 +172,7 @@ begin
     //Запуск потока Рестарт
     FStartTRDCommand := StartTRDCommand.Create(False);
     FStartTRDCommand.Priority := tpNormal;
-  finally
+  except
   end;
 end;
 
