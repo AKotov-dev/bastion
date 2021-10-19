@@ -39,7 +39,7 @@ begin
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
     ExProcess.Options := [poWaitOnExit];
-    ExProcess.Parameters.Add('/etc/squid/iptables.sh');
+    ExProcess.Parameters.Add('/etc/squid/bastion.sh');
     ExProcess.Execute;
   finally
     ExProcess.Free;
