@@ -2,7 +2,7 @@
 name=bastion
 
 [VERSION]
-version=0.2
+version=0.3
 
 [RELEASE]
 release=1.mga8
@@ -71,9 +71,13 @@ devtool=Lazarus
 toolversion=2.0.10
 
 [INFO]
-0=v0.2
-1=+ fixed status polling
-2=+ www indicator (ping ya.ru)
-3=+ dependencies: openssh-server & multitail
-4=
-5=v0.1 - initial version
+0=v0.3
+1=+ sorting lists
+2=+ optimization for Squid-5.x
+3=
+4=v0.2
+5=+ fixed status polling
+6=+ www indicator (ping ya.ru)
+7=+ dependencies: openssh-server & multitail
+8=
+9=v0.1 - initial version
