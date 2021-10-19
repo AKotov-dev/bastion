@@ -120,13 +120,16 @@ object MainForm: TMainForm
     ClientWidth = 827
     TabOrder = 0
     object RestartBtn: TBitBtn
+      AnchorSideTop.Control = NewCertBtn
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = NewCertBtn
+      AnchorSideBottom.Side = asrBottom
       Left = 725
-      Height = 30
+      Height = 36
       Top = 5
       Width = 96
-      Anchors = [akRight]
+      Anchors = [akTop, akRight, akBottom]
       BorderSpacing.Right = 6
       Caption = 'Restart'
       OnClick = RestartBtnClick
@@ -187,12 +190,15 @@ object MainForm: TMainForm
       ParentFont = False
     end
     object NewCertBtn: TBitBtn
+      AnchorSideTop.Control = Edit1
       AnchorSideRight.Control = RestartBtn
+      AnchorSideBottom.Control = Edit1
+      AnchorSideBottom.Side = asrBottom
       Left = 557
-      Height = 30
+      Height = 36
       Top = 5
       Width = 163
-      Anchors = [akTop, akRight]
+      Anchors = [akTop, akRight, akBottom]
       BorderSpacing.Right = 5
       Caption = 'New Certificate'
       OnClick = NewCertBtnClick
@@ -204,7 +210,7 @@ object MainForm: TMainForm
       Height = 15
       Top = 16
       Width = 52
-      Anchors = []
+      Anchors = [akTop]
       BorderSpacing.Right = 3
       Caption = 'Network'
       ParentColor = False
@@ -226,8 +232,8 @@ object MainForm: TMainForm
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
       Left = 691
-      Height = 16
-      Top = 62
+      Height = 15
+      Top = 63
       Width = 130
       Anchors = [akTop, akRight]
       BorderSpacing.Right = 6
@@ -263,7 +269,7 @@ object MainForm: TMainForm
       Height = 15
       Top = 16
       Width = 25
-      Anchors = []
+      Anchors = [akTop]
       BorderSpacing.Right = 4
       Caption = 'LAN'
       ParentColor = False

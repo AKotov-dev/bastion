@@ -48,6 +48,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="123"/>
         <CursorPos Y="138"/>
         <UsageCount Value="27"/>
@@ -58,10 +59,9 @@
         <Filename Value="trd_cmd.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TRD_CMD"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="47"/>
-        <CursorPos X="36" Y="71"/>
+        <CursorPos X="47" Y="70"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -69,6 +69,7 @@
         <Filename Value="status_trd.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
+        <TopLine Value="47"/>
         <CursorPos X="3" Y="77"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
@@ -77,6 +78,7 @@
         <Filename Value="ping_trd.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
+        <TopLine Value="10"/>
         <CursorPos X="101" Y="40"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
