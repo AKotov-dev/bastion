@@ -16,4 +16,4 @@ Configure the `WAN/LAN` on the computer acting as the gateway and run `Bastion`.
 Note1: Bastion can be configured/run without GUI (scripts only).  
 Note2: Bastion has built-in DNS/DHCP (dnsmasq); address pool x.x.x.20-x.x.x.250.
 
-![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot.png)
+![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot1.png)
