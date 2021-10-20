@@ -196,9 +196,12 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 345
       Height = 36
+      Hint = 'Local network'
       Top = 5
       Width = 140
       BorderSpacing.Left = 4
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 2
     end
     object ProgressBar1: TProgressBar
