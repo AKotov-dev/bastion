@@ -1,4 +1,4 @@
-Bastion - Website filter for the office network
+Bastion - gateway and content filter for the office network
 --
 Dependencies: `iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server dnsmasq`
 
