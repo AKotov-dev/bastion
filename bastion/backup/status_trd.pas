@@ -135,7 +135,7 @@ begin
     MainForm.DNSMasqSh.Brush.Color := clLime
   else
     MainForm.DNSMasqSh.Brush.Color := clYellow;
-  MainForm.DNSCheckBox.Repaint;
+  MainForm.DNSMasqSh.Repaint;
 end;
 
 end.

@@ -3,7 +3,7 @@ msgstr "Content-Type: text/plain; charset=UTF-8"
 
 #: tmainform.apachelabel.caption
 msgctxt "tmainform.apachelabel.caption"
-msgid "Apache"
+msgid "apache"
 msgstr ""
 
 #: tmainform.caption
@@ -12,12 +12,12 @@ msgstr ""
 
 #: tmainform.dnscheckbox.caption
 msgctxt "tmainform.dnscheckbox.caption"
-msgid "DNSMasq"
+msgid "dnsmasq"
 msgstr ""
 
 #: tmainform.iptableslabel.caption
 msgctxt "tmainform.iptableslabel.caption"
-msgid "IPTables"
+msgid "iptables"
 msgstr ""
 
 #: tmainform.label1.caption
@@ -60,7 +60,7 @@ msgstr ""
 
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
-msgid "Squid"
+msgid "squid"
 msgstr ""
 
 #: tmainform.statictext1.caption
@@ -69,7 +69,7 @@ msgstr ""
 
 #: tmainform.wwwlabel.caption
 msgctxt "tmainform.wwwlabel.caption"
-msgid "WWW"
+msgid "www"
 msgstr ""
 
 #: unit1.screatecert

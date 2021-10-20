@@ -112,7 +112,7 @@ begin
   if Trim(Result[0]) = 'active' then
     MainForm.SquidSh.Brush.Color := clLime
   else
-    MainForm.SquidLabel.Font.Color := clYellow;
+    MainForm.SquidSh.Brush.Color := clYellow;
   MainForm.SquidSh.Repaint;
 end;
 

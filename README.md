@@ -15,4 +15,4 @@ Configure the `WAN/LAN` on the computer acting as the gateway and run `Bastion`.
 
 Note1: Bastion can be configured/run without GUI (scripts only).
 
-![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot6.png)
+![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot.png)

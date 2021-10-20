@@ -125,7 +125,7 @@ object MainForm: TMainForm
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
       Left = 715
-      Height = 32
+      Height = 30
       Top = 5
       Width = 96
       Anchors = [akTop, akRight]
@@ -137,12 +137,12 @@ object MainForm: TMainForm
     object SquidLabel: TLabel
       AnchorSideLeft.Control = IPTablesLabel
       AnchorSideLeft.Side = asrBottom
-      Left = 118
+      Left = 111
       Height = 15
       Top = 65
-      Width = 36
+      Width = 35
       BorderSpacing.Left = 10
-      Caption = 'Squid'
+      Caption = 'squid'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -151,12 +151,12 @@ object MainForm: TMainForm
     object IPTablesLabel: TLabel
       AnchorSideLeft.Control = WWWLabel
       AnchorSideLeft.Side = asrBottom
-      Left = 55
+      Left = 49
       Height = 15
       Top = 65
-      Width = 53
+      Width = 52
       BorderSpacing.Left = 10
-      Caption = 'IPTables'
+      Caption = 'iptables'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -167,7 +167,7 @@ object MainForm: TMainForm
       AnchorSideRight.Control = RestartBtn
       AnchorSideBottom.Side = asrBottom
       Left = 547
-      Height = 32
+      Height = 30
       Top = 5
       Width = 163
       Anchors = [akTop, akRight]
@@ -264,12 +264,12 @@ object MainForm: TMainForm
     object ApacheLabel: TLabel
       AnchorSideLeft.Control = SquidLabel
       AnchorSideLeft.Side = asrBottom
-      Left = 164
+      Left = 156
       Height = 15
       Top = 65
-      Width = 48
+      Width = 47
       BorderSpacing.Left = 10
-      Caption = 'Apache'
+      Caption = 'apache'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -294,8 +294,8 @@ object MainForm: TMainForm
       Left = 6
       Height = 15
       Top = 65
-      Width = 39
-      Caption = 'WWW'
+      Width = 33
+      Caption = 'www'
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -306,12 +306,12 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = ApacheLabel
       AnchorSideTop.Side = asrCenter
-      Left = 222
+      Left = 213
       Height = 32
       Top = 56
-      Width = 92
+      Width = 89
       BorderSpacing.Left = 10
-      Caption = 'DNSMasq'
+      Caption = 'dnsmasq'
       OnChange = DNSCheckBoxChange
       ParentFont = False
       TabOrder = 6
@@ -320,7 +320,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = WWWLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = WWWLabel
-      Left = 19
+      Left = 16
       Height = 12
       Top = 50
       Width = 12
@@ -333,7 +333,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = IPTablesLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = IPTablesLabel
-      Left = 75
+      Left = 69
       Height = 12
       Top = 50
       Width = 12
@@ -346,7 +346,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = SquidLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = SquidLabel
-      Left = 130
+      Left = 122
       Height = 12
       Top = 50
       Width = 12
@@ -359,7 +359,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = ApacheLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = ApacheLabel
-      Left = 182
+      Left = 173
       Height = 12
       Top = 50
       Width = 12
@@ -370,12 +370,12 @@ object MainForm: TMainForm
     end
     object DNSMasqSh: TShape
       AnchorSideLeft.Control = DNSCheckBox
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideBottom.Control = DNSCheckBox
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = ApacheSh
       AnchorSideBottom.Side = asrCenter
-      Left = 317
+      Left = 251
       Height = 12
-      Top = 66
+      Top = 50
       Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Left = 3

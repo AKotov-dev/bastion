@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 327
+  Left = 303
   Height = 632
-  Top = 129
+  Top = 125
   Width = 819
   ActiveControl = RestartBtn
   Caption = 'Bastion'
@@ -370,12 +370,12 @@ object MainForm: TMainForm
     end
     object DNSMasqSh: TShape
       AnchorSideLeft.Control = DNSCheckBox
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideBottom.Control = DNSCheckBox
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = ApacheSh
       AnchorSideBottom.Side = asrCenter
-      Left = 317
+      Left = 262
       Height = 12
-      Top = 66
+      Top = 50
       Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Left = 3

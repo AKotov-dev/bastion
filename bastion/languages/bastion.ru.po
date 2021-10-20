@@ -14,7 +14,7 @@ msgstr ""
 
 #: tmainform.apachelabel.caption
 msgctxt "tmainform.apachelabel.caption"
-msgid "Apache"
+msgid "apache"
 msgstr ""
 
 #: tmainform.caption
@@ -23,12 +23,12 @@ msgstr ""
 
 #: tmainform.dnscheckbox.caption
 msgctxt "tmainform.dnscheckbox.caption"
-msgid "DNSMasq"
+msgid "dnsmasq"
 msgstr ""
 
 #: tmainform.iptableslabel.caption
 msgctxt "tmainform.iptableslabel.caption"
-msgid "IPTables"
+msgid "iptables"
 msgstr ""
 
 #: tmainform.label1.caption
@@ -74,7 +74,7 @@ msgstr "Рестарт"
 
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
-msgid "Squid"
+msgid "squid"
 msgstr ""
 
 #: tmainform.statictext1.caption
@@ -83,7 +83,7 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2021   URL: https:
 
 #: tmainform.wwwlabel.caption
 msgctxt "tmainform.wwwlabel.caption"
-msgid "WWW"
+msgid "www"
 msgstr ""
 
 #: unit1.screatecert
