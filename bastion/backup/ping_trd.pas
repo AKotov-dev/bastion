@@ -39,7 +39,7 @@ begin
     PingProcess.Executable := 'bash';
     PingProcess.Parameters.Add('-c');
     PingProcess.Parameters.Add(
-      'ERR=$(ping 8.8.8.8 -c 2 2>&1 > /dev/null) && echo "yes" || echo "no"');
+      'ERR=$(ping google.com -c 2 2>&1 > /dev/null) && echo "yes" || echo "no"');
     PingProcess.Options := [poUsePipes, poWaitOnExit];
 
     while not Terminated do
@@ -61,10 +61,10 @@ procedure CheckPing.ShowPing;
 begin
   Application.ProcessMessages;
   if Trim(PingStr[0]) = 'yes' then
-    MainForm.WWWLabel.Color := clLime
+    MainForm.WWWSh.Brush.Color := clLime
   else
-    MainForm.WWWLabel.Color := clYellow;
-  MainForm.WWWLabel.Repaint;
+    MainForm.WWWSh.Brush.Color := clYellow;
+  MainForm.WWWSh.Repaint;
 end;
 
 end.

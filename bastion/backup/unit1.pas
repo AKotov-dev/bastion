@@ -20,6 +20,11 @@ type
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
+    WWWSh: TShape;
+    IPTablesSh: TShape;
+    SquidSh: TShape;
+    ApacheSh: TShape;
+    DNSMasqSh: TShape;
     WWWLabel: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -123,7 +128,7 @@ begin
       Conf.Add('no-resolv');
       Conf.Add('');
 
-      Conf.Add('#DNS для раздачи');
+      Conf.Add('#Форвардинг DNS-запросов');
       Conf.Add('server=8.8.8.8');
       Conf.Add('server=8.8.4.4');
       Conf.Add('');

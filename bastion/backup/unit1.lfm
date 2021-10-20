@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 305
+  Left = 327
   Height = 632
-  Top = 124
+  Top = 129
   Width = 819
   ActiveControl = RestartBtn
   Caption = 'Bastion'
@@ -18,8 +18,8 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = StaticText1
     Left = 6
-    Height = 493
-    Top = 119
+    Height = 491
+    Top = 121
     Width = 258
     Anchors = [akTop, akLeft, akBottom]
     BorderSpacing.Left = 6
@@ -36,7 +36,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo1
     Left = 6
     Height = 15
-    Top = 99
+    Top = 101
     Width = 124
     BorderSpacing.Top = 11
     BorderSpacing.Bottom = 5
@@ -50,7 +50,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     Left = 555
     Height = 15
-    Top = 99
+    Top = 101
     Width = 142
     BorderSpacing.Top = 20
     BorderSpacing.Bottom = 5
@@ -66,8 +66,8 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StaticText1
     Left = 555
-    Height = 493
-    Top = 119
+    Height = 491
+    Top = 121
     Width = 258
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Left = 6
@@ -85,8 +85,8 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Memo2
     AnchorSideBottom.Control = StaticText1
     Left = 270
-    Height = 493
-    Top = 119
+    Height = 491
+    Top = 121
     Width = 279
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 6
@@ -103,7 +103,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo3
     Left = 270
     Height = 15
-    Top = 99
+    Top = 101
     Width = 128
     BorderSpacing.Top = 20
     BorderSpacing.Bottom = 5
@@ -112,11 +112,11 @@ object MainForm: TMainForm
   end
   object GroupBox1: TGroupBox
     Left = 0
-    Height = 88
+    Height = 90
     Top = 0
     Width = 819
     Align = alTop
-    ClientHeight = 86
+    ClientHeight = 88
     ClientWidth = 817
     TabOrder = 0
     object RestartBtn: TBitBtn
@@ -139,11 +139,10 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       Left = 118
       Height = 15
-      Top = 56
+      Top = 65
       Width = 36
       BorderSpacing.Left = 10
       Caption = 'Squid'
-      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -154,11 +153,10 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       Left = 55
       Height = 15
-      Top = 56
+      Top = 65
       Width = 53
       BorderSpacing.Left = 10
       Caption = 'IPTables'
-      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -209,7 +207,7 @@ object MainForm: TMainForm
       AnchorSideRight.Side = asrBottom
       Left = 681
       Height = 15
-      Top = 63
+      Top = 65
       Width = 130
       Anchors = [akTop, akRight]
       BorderSpacing.Right = 6
@@ -268,11 +266,10 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       Left = 164
       Height = 15
-      Top = 56
+      Top = 65
       Width = 48
       BorderSpacing.Left = 10
       Caption = 'Apache'
-      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -282,7 +279,7 @@ object MainForm: TMainForm
       AnchorSideRight.Control = ProgressBar1
       Left = 416
       Height = 30
-      Top = 48
+      Top = 50
       Width = 257
       Anchors = [akTop, akRight]
       BorderSpacing.Right = 8
@@ -296,10 +293,9 @@ object MainForm: TMainForm
     object WWWLabel: TLabel
       Left = 6
       Height = 15
-      Top = 56
+      Top = 65
       Width = 39
       Caption = 'WWW'
-      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -312,14 +308,79 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 222
       Height = 32
-      Top = 47
+      Top = 56
       Width = 92
       BorderSpacing.Left = 10
       Caption = 'DNSMasq'
-      Font.Color = clRed
       OnChange = DNSCheckBoxChange
       ParentFont = False
       TabOrder = 6
+    end
+    object WWWSh: TShape
+      AnchorSideLeft.Control = WWWLabel
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = WWWLabel
+      Left = 19
+      Height = 12
+      Top = 50
+      Width = 12
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Bottom = 3
+      Brush.Color = clYellow
+      Shape = stCircle
+    end
+    object IPTablesSh: TShape
+      AnchorSideLeft.Control = IPTablesLabel
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = IPTablesLabel
+      Left = 75
+      Height = 12
+      Top = 50
+      Width = 12
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Bottom = 3
+      Brush.Color = clYellow
+      Shape = stCircle
+    end
+    object SquidSh: TShape
+      AnchorSideLeft.Control = SquidLabel
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = SquidLabel
+      Left = 130
+      Height = 12
+      Top = 50
+      Width = 12
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Bottom = 3
+      Brush.Color = clYellow
+      Shape = stCircle
+    end
+    object ApacheSh: TShape
+      AnchorSideLeft.Control = ApacheLabel
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = ApacheLabel
+      Left = 182
+      Height = 12
+      Top = 50
+      Width = 12
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Bottom = 3
+      Brush.Color = clYellow
+      Shape = stCircle
+    end
+    object DNSMasqSh: TShape
+      AnchorSideLeft.Control = DNSCheckBox
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideBottom.Control = DNSCheckBox
+      AnchorSideBottom.Side = asrCenter
+      Left = 317
+      Height = 12
+      Top = 66
+      Width = 12
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Left = 3
+      Brush.Color = clYellow
+      Shape = stCircle
     end
   end
   object StaticText1: TStaticText

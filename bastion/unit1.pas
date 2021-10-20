@@ -20,6 +20,11 @@ type
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
+    WWWSh: TShape;
+    IPTablesSh: TShape;
+    SquidSh: TShape;
+    ApacheSh: TShape;
+    DNSMasqSh: TShape;
     WWWLabel: TLabel;
     Label2: TLabel;
     Label3: TLabel;
