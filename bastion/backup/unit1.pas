@@ -13,21 +13,22 @@ type
   { TMainForm }
 
   TMainForm = class(TForm)
+    DNSCheckBox: TCheckBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
-    Label11: TLabel;
+    WWWLabel: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
+    SquidLabel: TLabel;
+    IPTablesLabel: TLabel;
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
-    Label9: TLabel;
+    ApacheLabel: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
     Memo3: TMemo;
@@ -35,18 +36,17 @@ type
     ProgressBar1: TProgressBar;
     RestartBtn: TBitBtn;
     SaveDialog1: TSaveDialog;
-    Shape1: TShape;
-    Shape2: TShape;
-    Shape3: TShape;
-    Shape4: TShape;
     StaticText1: TStaticText;
     XMLPropStorage1: TXMLPropStorage;
+    procedure DNSCheckBoxChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure NewCertBtnClick(Sender: TObject);
     procedure RestartBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure StartProcess;
+    procedure DNSMasqConf;
+
   private
 
   public
@@ -95,6 +95,71 @@ begin
   end;
 end;
 
+procedure TMainForm.DNSMasqConf;
+var
+  i: integer;
+  LanIP: ansistring;
+  Conf: TStringList;
+begin
+  try
+    Conf := TStringList.Create;
+
+    //Узнаём IP-адрес интерфейса LAN
+    if RunCommand('/bin/bash', ['-c', 'ifconfig ' + Trim(Edit2.Text) +
+      ' | grep inet | awk ' + '''' + '{ print $2 }' + ''''], LanIP) then
+    begin
+      LanIP := Trim(LanIP);
+
+      Conf.Add('#Авторитетный DHCP сервер');
+      Conf.Add('dhcp-authoritative');
+      Conf.Add('');
+
+      Conf.Add('#Слушать на интерфейсах ($lan=enp0s8=192.168.1.1+lo)');
+      Conf.Add('interface=' + Trim(Edit2.Text));
+      Conf.Add('listen-address=127.0.0.1,' + LanIP);
+      Conf.Add('');
+
+      Conf.Add('#Не использовать resolv.conf');
+      Conf.Add('no-resolv');
+      Conf.Add('');
+
+      Conf.Add('#DNS для раздачи');
+      Conf.Add('server=8.8.8.8');
+      Conf.Add('server=8.8.4.4');
+      Conf.Add('');
+
+      Conf.Add('#Отдать параметры клиенту');
+      Conf.Add('dhcp-option=option:router,' + LanIP);
+      Conf.Add('dhcp-option=option:dns-server,' + LanIP);
+      Conf.Add('');
+
+      //Отбрасываем последний октет LanIP
+      for i := Length(LanIP) downto 1 do
+        if LanIP[i] = '.' then
+        begin
+          LanIP := Copy(LanIP, 1, i);
+          Break;
+        end;
+
+      Conf.Add('#Диапазон выдачи IP-адресов (аренда 72 часа)');
+      Conf.Add('dhcp-range=' + LanIP + '20,' + LanIP + '250,72h');
+      Conf.Add('');
+
+      Conf.Add('#Отключить DHCP_INFO-PROXY для Windows 7+');
+      Conf.Add('dhcp-option=252,"\n"');
+      Conf.Add('');
+
+      Conf.Add('#Настройки кеша DNS');
+      Conf.Add('cache-size=10000');
+      Conf.Add('no-negcache');
+
+      Conf.SaveToFile('/etc/dnsmasq.conf');
+    end;
+  finally
+    Conf.Free;
+  end;
+end;
+
 procedure TMainForm.FormResize(Sender: TObject);
 begin
   Memo1.Width := MainForm.Width div 3 - 16;
@@ -139,6 +204,12 @@ begin
     Memo1.Lines.LoadFromFile('/etc/squid/blacklist.txt');
     Memo3.Lines.LoadFromFile('/etc/squid/whitelist.txt');
     Memo2.Lines.LoadFromFile('/etc/squid/vip-users.txt');
+
+    //Флаг запуска DNSMasq для bastion.sh
+    if FileExists('/etc/squid/dnsmasq-start') then
+      DNSCheckBox.Checked := True
+    else
+      DNSCheckBox.Checked := False;
   except
   end;
 end;
@@ -165,8 +236,10 @@ begin
     Memo3.Lines.SaveToFile('/etc/squid/whitelist.txt');
     Memo2.Lines.SaveToFile('/etc/squid/vip-users.txt');
 
-    Shape1.Brush.Color := clYellow;
-    Shape2.Brush.Color := clYellow;
+    //Запуск DNS/DHCP (DNSMasq)
+    if DNSCheckBox.Checked then
+      DNSMasqConf;
+
     Application.ProcessMessages;
 
     //Запуск потока Рестарт
@@ -179,6 +252,15 @@ end;
 procedure TMainForm.FormShow(Sender: TObject);
 begin
   XMLPropStorage1.Restore;
+end;
+
+//Флаг запуска DNSMasq для bastion.sh
+procedure TMainForm.DNSCheckBoxChange(Sender: TObject);
+begin
+  if DNSCheckBox.Checked then
+    Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start')
+  else
+    DeleteFile('/etc/squid/dnsmasq-start');
 end;
 
 //Создание сертификата

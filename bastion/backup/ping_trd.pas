@@ -61,10 +61,10 @@ procedure CheckPing.ShowPing;
 begin
   Application.ProcessMessages;
   if Trim(PingStr[0]) = 'yes' then
-    MainForm.Shape4.Brush.Color := clLime
+    MainForm.WWWLabel.Color := clLime
   else
-    MainForm.Shape4.Brush.Color := clYellow;
-  MainForm.Shape4.Brush.Repaint;
+    MainForm.WWWLabel.Color := clYellow;
+  MainForm.WWWLabel.Repaint;
 end;
 
 end.

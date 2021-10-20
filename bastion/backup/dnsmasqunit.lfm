@@ -1,0 +1,8 @@
+object DNSMasqForm: TDNSMasqForm
+  Left = 398
+  Height = 411
+  Top = 208
+  Width = 563
+  Caption = 'DNSMasq Settings'
+  LCLVersion = '2.0.10.0'
+end

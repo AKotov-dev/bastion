@@ -7,14 +7,13 @@ uses
   cthreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1, TRD_CMD, status_trd, ping_trd
-  { you can add units after this };
+  Forms, Unit1, TRD_CMD, status_trd, ping_trd;
 
 {$R *.res}
 
 begin
   RequireDerivedFormResource:=True;
-  Application.Title:='Bastion-v0.3';
+  Application.Title:='Bastion-v0.4';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);

@@ -21,6 +21,7 @@ type
     procedure ShowIPTables;
     procedure ShowSquid;
     procedure ShowApache;
+    procedure ShowDNSMasq;
 
   end;
 
@@ -73,6 +74,14 @@ begin
       Result.LoadFromStream(ExProcess.Output);
       Synchronize(@ShowApache);
 
+      //DNSMasq status
+      ExProcess.Parameters.Delete(1);
+      ExProcess.Parameters.Add('systemctl is-active dnsmasq');
+      Exprocess.Execute;
+
+      Result.LoadFromStream(ExProcess.Output);
+      Synchronize(@ShowDNSMasq);
+
       Sleep(250);
     end;
 
@@ -90,10 +99,10 @@ procedure ShowStatus.ShowIPTables;
 begin
   Application.ProcessMessages;
   if Trim(Result[0]) = 'active' then
-    MainForm.Shape2.Brush.Color := clLime
+    MainForm.IPTablesLabel.Font.Color := clGreen
   else
-    MainForm.Shape2.Brush.Color := clYellow;
-  MainForm.Shape2.Repaint;
+    MainForm.IPTablesLabel.Font.Color := clRed;
+  MainForm.IPTablesLabel.Repaint;
 end;
 
 //Squid status
@@ -101,10 +110,10 @@ procedure ShowStatus.ShowSquid;
 begin
   Application.ProcessMessages;
   if Trim(Result[0]) = 'active' then
-    MainForm.Shape1.Brush.Color := clLime
+    MainForm.SquidLabel.Font.Color := clGreen
   else
-    MainForm.Shape1.Brush.Color := clYellow;
-  MainForm.Shape1.Repaint;
+    MainForm.SquidLabel.Font.Color := clRed;
+  MainForm.SquidLabel.Repaint;
 end;
 
 //Apache status
@@ -112,10 +121,21 @@ procedure ShowStatus.ShowApache;
 begin
   Application.ProcessMessages;
   if Trim(Result[0]) = 'active' then
-    MainForm.Shape3.Brush.Color := clLime
+    MainForm.ApacheLabel.Font.Color := clGreen
   else
-    MainForm.Shape3.Brush.Color := clYellow;
-  MainForm.Shape3.Repaint;
+    MainForm.ApacheLabel.Font.Color := clRed;
+  MainForm.ApacheLabel.Repaint;
+end;
+
+//DNSMasq status
+procedure ShowStatus.ShowDNSMasq;
+begin
+  Application.ProcessMessages;
+  if Trim(Result[0]) = 'active' then
+    MainForm.DNSCheckBox.Font.Color := clGreen
+  else
+    MainForm.DNSCheckBox.Font.Color := clRed;
+  MainForm.DNSCheckBox.Repaint;
 end;
 
 end.

@@ -1,12 +1,12 @@
 object MainForm: TMainForm
-  Left = 303
-  Height = 631
-  Top = 123
-  Width = 829
+  Left = 305
+  Height = 632
+  Top = 124
+  Width = 819
   ActiveControl = RestartBtn
   Caption = 'Bastion'
-  ClientHeight = 631
-  ClientWidth = 829
+  ClientHeight = 632
+  ClientWidth = 819
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
@@ -18,7 +18,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = StaticText1
     Left = 6
-    Height = 492
+    Height = 493
     Top = 119
     Width = 258
     Anchors = [akTop, akLeft, akBottom]
@@ -48,7 +48,7 @@ object MainForm: TMainForm
     AnchorSideTop.Control = Label3
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Control = Memo2
-    Left = 565
+    Left = 555
     Height = 15
     Top = 99
     Width = 142
@@ -65,8 +65,8 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StaticText1
-    Left = 565
-    Height = 492
+    Left = 555
+    Height = 493
     Top = 119
     Width = 258
     Anchors = [akTop, akRight, akBottom]
@@ -85,9 +85,9 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Memo2
     AnchorSideBottom.Control = StaticText1
     Left = 270
-    Height = 492
+    Height = 493
     Top = 119
-    Width = 289
+    Width = 279
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 6
     BorderSpacing.Top = 5
@@ -114,76 +114,51 @@ object MainForm: TMainForm
     Left = 0
     Height = 88
     Top = 0
-    Width = 829
+    Width = 819
     Align = alTop
     ClientHeight = 86
-    ClientWidth = 827
+    ClientWidth = 817
     TabOrder = 0
     object RestartBtn: TBitBtn
       AnchorSideTop.Control = NewCertBtn
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
-      AnchorSideBottom.Control = NewCertBtn
       AnchorSideBottom.Side = asrBottom
-      Left = 725
-      Height = 36
+      Left = 715
+      Height = 32
       Top = 5
       Width = 96
-      Anchors = [akTop, akRight, akBottom]
+      Anchors = [akTop, akRight]
       BorderSpacing.Right = 6
       Caption = 'Restart'
       OnClick = RestartBtnClick
       TabOrder = 4
     end
-    object Shape1: TShape
-      AnchorSideLeft.Control = Label4
+    object SquidLabel: TLabel
+      AnchorSideLeft.Control = IPTablesLabel
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Label4
-      AnchorSideBottom.Control = Label4
-      AnchorSideBottom.Side = asrCenter
-      Left = 205
-      Height = 14
-      Top = 56
-      Width = 12
-      Anchors = [akTop, akLeft, akBottom]
-      BorderSpacing.Left = 3
-      Brush.Color = clYellow
-      Shape = stCircle
-    end
-    object Label4: TLabel
-      Left = 166
+      Left = 118
       Height = 15
       Top = 56
       Width = 36
-      Anchors = [akTop]
+      BorderSpacing.Left = 10
       Caption = 'Squid'
+      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
       ParentFont = False
     end
-    object Shape2: TShape
-      AnchorSideLeft.Control = Label5
+    object IPTablesLabel: TLabel
+      AnchorSideLeft.Control = WWWLabel
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Label5
-      AnchorSideBottom.Control = Label5
-      AnchorSideBottom.Side = asrCenter
-      Left = 136
-      Height = 14
-      Top = 56
-      Width = 12
-      Anchors = [akTop, akLeft, akBottom]
-      BorderSpacing.Left = 4
-      Brush.Color = clYellow
-      Shape = stCircle
-    end
-    object Label5: TLabel
-      Left = 79
+      Left = 55
       Height = 15
       Top = 56
       Width = 53
-      Anchors = [akTop]
+      BorderSpacing.Left = 10
       Caption = 'IPTables'
+      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
@@ -192,25 +167,26 @@ object MainForm: TMainForm
     object NewCertBtn: TBitBtn
       AnchorSideTop.Control = Edit1
       AnchorSideRight.Control = RestartBtn
-      AnchorSideBottom.Control = Edit1
       AnchorSideBottom.Side = asrBottom
-      Left = 557
-      Height = 36
+      Left = 547
+      Height = 32
       Top = 5
       Width = 163
-      Anchors = [akTop, akRight, akBottom]
+      Anchors = [akTop, akRight]
       BorderSpacing.Right = 5
       Caption = 'New Certificate'
       OnClick = NewCertBtnClick
       TabOrder = 3
     end
     object Label1: TLabel
+      AnchorSideLeft.Control = Edit2
+      AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Side = asrCenter
-      Left = 303
+      Left = 289
       Height = 15
       Top = 16
       Width = 52
-      Anchors = [akTop]
+      BorderSpacing.Left = 10
       BorderSpacing.Right = 3
       Caption = 'Network'
       ParentColor = False
@@ -220,7 +196,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label1
       AnchorSideTop.Side = asrCenter
-      Left = 359
+      Left = 345
       Height = 36
       Top = 5
       Width = 140
@@ -231,7 +207,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = RestartBtn
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
-      Left = 691
+      Left = 681
       Height = 15
       Top = 63
       Width = 130
@@ -245,7 +221,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = Label2
       AnchorSideTop.Side = asrCenter
-      Left = 185
+      Left = 179
       Height = 36
       Top = 5
       Width = 100
@@ -264,12 +240,14 @@ object MainForm: TMainForm
       TabOrder = 0
     end
     object Label2: TLabel
+      AnchorSideLeft.Control = Edit3
+      AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Side = asrCenter
-      Left = 156
+      Left = 150
       Height = 15
       Top = 16
       Width = 25
-      Anchors = [akTop]
+      BorderSpacing.Left = 10
       BorderSpacing.Right = 4
       Caption = 'LAN'
       ParentColor = False
@@ -285,36 +263,24 @@ object MainForm: TMainForm
       Caption = 'WAN'
       ParentColor = False
     end
-    object Label9: TLabel
-      Left = 233
+    object ApacheLabel: TLabel
+      AnchorSideLeft.Control = SquidLabel
+      AnchorSideLeft.Side = asrBottom
+      Left = 164
       Height = 15
       Top = 56
       Width = 48
-      Anchors = [akTop]
+      BorderSpacing.Left = 10
       Caption = 'Apache'
+      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
       ParentFont = False
     end
-    object Shape3: TShape
-      AnchorSideLeft.Control = Label9
-      AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Label9
-      AnchorSideBottom.Control = Label9
-      AnchorSideBottom.Side = asrCenter
-      Left = 284
-      Height = 14
-      Top = 56
-      Width = 12
-      Anchors = [akTop, akLeft, akBottom]
-      BorderSpacing.Left = 3
-      Brush.Color = clYellow
-      Shape = stCircle
-    end
     object Label10: TLabel
       AnchorSideRight.Control = ProgressBar1
-      Left = 426
+      Left = 416
       Height = 30
       Top = 48
       Width = 257
@@ -327,38 +293,40 @@ object MainForm: TMainForm
       ParentColor = False
       ParentFont = False
     end
-    object Label11: TLabel
+    object WWWLabel: TLabel
       Left = 6
       Height = 15
       Top = 56
       Width = 39
       Caption = 'WWW'
+      Font.Color = clRed
       Font.Height = -13
       Font.Name = 'Sans'
       ParentColor = False
       ParentFont = False
     end
-    object Shape4: TShape
-      AnchorSideLeft.Control = Label11
+    object DNSCheckBox: TCheckBox
+      AnchorSideLeft.Control = ApacheLabel
       AnchorSideLeft.Side = asrBottom
-      AnchorSideTop.Control = Label11
-      AnchorSideBottom.Control = Label11
-      AnchorSideBottom.Side = asrCenter
-      Left = 49
-      Height = 14
-      Top = 56
-      Width = 12
-      Anchors = [akTop, akLeft, akBottom]
-      BorderSpacing.Left = 4
-      Brush.Color = clYellow
-      Shape = stCircle
+      AnchorSideTop.Control = ApacheLabel
+      AnchorSideTop.Side = asrCenter
+      Left = 222
+      Height = 32
+      Top = 47
+      Width = 92
+      BorderSpacing.Left = 10
+      Caption = 'DNSMasq'
+      Font.Color = clRed
+      OnChange = DNSCheckBoxChange
+      ParentFont = False
+      TabOrder = 6
     end
   end
   object StaticText1: TStaticText
     Left = 0
     Height = 20
-    Top = 611
-    Width = 829
+    Top = 612
+    Width = 819
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
     Color = clDefault

@@ -12,8 +12,23 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 2.4.2\n"
 
+#: tmainform.apachelabel.caption
+msgctxt "tmainform.apachelabel.caption"
+msgid "Apache"
+msgstr ""
+
 #: tmainform.caption
 msgid "Bastion"
+msgstr ""
+
+#: tmainform.dnscheckbox.caption
+msgctxt "tmainform.dnscheckbox.caption"
+msgid "DNSMasq"
+msgstr ""
+
+#: tmainform.iptableslabel.caption
+msgctxt "tmainform.iptableslabel.caption"
+msgid "IPTables"
 msgstr ""
 
 #: tmainform.label1.caption
@@ -29,10 +44,6 @@ msgstr ""
 "URL отчета: http://127.0.0.1/squidreport\n"
 "\n"
 
-#: tmainform.label11.caption
-msgid "WWW"
-msgstr ""
-
 #: tmainform.label2.caption
 msgid "LAN"
 msgstr ""
@@ -40,14 +51,6 @@ msgstr ""
 #: tmainform.label3.caption
 msgid "BlackList of websites"
 msgstr "Черный список сайтов"
-
-#: tmainform.label4.caption
-msgid "Squid"
-msgstr ""
-
-#: tmainform.label5.caption
-msgid "IPTables"
-msgstr ""
 
 #: tmainform.label6.caption
 msgid "VIP-clients (IP-Address)"
@@ -61,10 +64,6 @@ msgstr "Белый список сайтов"
 msgid "WAN"
 msgstr ""
 
-#: tmainform.label9.caption
-msgid "Apache"
-msgstr ""
-
 #: tmainform.newcertbtn.caption
 msgid "New Certificate"
 msgstr "Новый сертификат"
@@ -73,9 +72,19 @@ msgstr "Новый сертификат"
 msgid "Restart"
 msgstr "Рестарт"
 
+#: tmainform.squidlabel.caption
+msgctxt "tmainform.squidlabel.caption"
+msgid "Squid"
+msgstr ""
+
 #: tmainform.statictext1.caption
 msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
 msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
+
+#: tmainform.wwwlabel.caption
+msgctxt "tmainform.wwwlabel.caption"
+msgid "WWW"
+msgstr ""
 
 #: unit1.screatecert
 msgid "Creating a certificate"
@@ -84,3 +93,4 @@ msgstr "Создание сертификата"
 #: unit1.snewcertwarn
 msgid "Create a new squid.der certificate for installation on clients computers?"
 msgstr "Создать новый сертификат squid.der для установки на компьютеры клиентов?"
+
