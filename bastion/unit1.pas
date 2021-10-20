@@ -178,7 +178,10 @@ var
   FStartShowPingThread, FStartShowStatusThread: TThread;
 begin
   try
-    MainForm.Caption := Application.Title;
+    if RunCommand('/bin/bash', ['-c', 'squid -v | head -n1'], S) then
+      MainForm.Caption := Concat(Application.Title, ' [', Trim(S), ']');
+
+   // MainForm.Caption := Application.Title;
 
     //Запуск потока отображения ping
     FStartShowPingThread := CheckPing.Create(False);

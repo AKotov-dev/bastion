@@ -26,6 +26,18 @@ msgctxt "tmainform.dnscheckbox.caption"
 msgid "dnsmasq"
 msgstr ""
 
+#: tmainform.dnscheckbox.hint
+msgid ""
+"enabling dns/dhcp\n"
+"range: x.x.x.20-x.x.x.250\n"
+msgstr ""
+"включение dns/dhcp\n"
+"диапазон: x.x.x.20-x.x.x.250\n"
+
+#: tmainform.edit1.hint
+msgid "Local network"
+msgstr "Локальная сеть"
+
 #: tmainform.iptableslabel.caption
 msgctxt "tmainform.iptableslabel.caption"
 msgid "iptables"
@@ -49,16 +61,16 @@ msgid "LAN"
 msgstr ""
 
 #: tmainform.label3.caption
-msgid "BlackList of websites"
-msgstr "Черный список сайтов"
+msgid "BlackList of domains"
+msgstr "Черный список доменов"
 
 #: tmainform.label6.caption
-msgid "VIP-clients (IP-Address)"
+msgid "VIP-clients (IP-address)"
 msgstr "VIP-клиенты (IP-адреса)"
 
 #: tmainform.label7.caption
-msgid "WhiteList of websites"
-msgstr "Белый список сайтов"
+msgid "WhiteList of domains"
+msgstr "Белый список доменов"
 
 #: tmainform.label8.caption
 msgid "WAN"
@@ -86,6 +98,11 @@ msgctxt "tmainform.wwwlabel.caption"
 msgid "www"
 msgstr ""
 
+#: tmainform.wwwlabel.hint
+msgctxt "tmainform.wwwlabel.hint"
+msgid "ping google.com"
+msgstr ""
+
 #: unit1.screatecert
 msgid "Creating a certificate"
 msgstr "Создание сертификата"
@@ -93,4 +110,3 @@ msgstr "Создание сертификата"
 #: unit1.snewcertwarn
 msgid "Create a new squid.der certificate for installation on clients computers?"
 msgstr "Создать новый сертификат squid.der для установки на компьютеры клиентов?"
-

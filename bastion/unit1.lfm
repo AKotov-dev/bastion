@@ -40,7 +40,7 @@ object MainForm: TMainForm
     Width = 124
     BorderSpacing.Top = 11
     BorderSpacing.Bottom = 5
-    Caption = 'BlackList of websites'
+    Caption = 'BlackList of domains'
     ParentColor = False
   end
   object Label6: TLabel
@@ -51,10 +51,10 @@ object MainForm: TMainForm
     Left = 555
     Height = 15
     Top = 101
-    Width = 142
+    Width = 141
     BorderSpacing.Top = 20
     BorderSpacing.Bottom = 5
-    Caption = 'VIP-clients (IP-Address)'
+    Caption = 'VIP-clients (IP-address)'
     ParentColor = False
   end
   object Memo2: TMemo
@@ -107,7 +107,7 @@ object MainForm: TMainForm
     Width = 128
     BorderSpacing.Top = 20
     BorderSpacing.Bottom = 5
-    Caption = 'WhiteList of websites'
+    Caption = 'WhiteList of domains'
     ParentColor = False
   end
   object GroupBox1: TGroupBox
@@ -196,9 +196,12 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 345
       Height = 36
+      Hint = 'Local network'
       Top = 5
       Width = 140
       BorderSpacing.Left = 4
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 2
     end
     object ProgressBar1: TProgressBar
@@ -293,6 +296,7 @@ object MainForm: TMainForm
     object WWWLabel: TLabel
       Left = 6
       Height = 15
+      Hint = 'ping google.com'
       Top = 65
       Width = 33
       Caption = 'www'
@@ -300,6 +304,8 @@ object MainForm: TMainForm
       Font.Name = 'Sans'
       ParentColor = False
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
     end
     object DNSCheckBox: TCheckBox
       AnchorSideLeft.Control = ApacheLabel
@@ -308,12 +314,15 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 213
       Height = 32
+      Hint = 'enabling dns/dhcp'#10'range: x.x.x.20-x.x.x.250'
       Top = 56
       Width = 89
       BorderSpacing.Left = 10
       Caption = 'dnsmasq'
       OnChange = DNSCheckBoxChange
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 6
     end
     object WWWSh: TShape
@@ -327,6 +336,7 @@ object MainForm: TMainForm
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
       Brush.Color = clYellow
+      ParentShowHint = False
       Shape = stCircle
     end
     object IPTablesSh: TShape

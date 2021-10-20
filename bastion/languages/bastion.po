@@ -15,6 +15,16 @@ msgctxt "tmainform.dnscheckbox.caption"
 msgid "dnsmasq"
 msgstr ""
 
+#: tmainform.dnscheckbox.hint
+msgid ""
+"enabling dns/dhcp\n"
+"range: x.x.x.20-x.x.x.250\n"
+msgstr ""
+
+#: tmainform.edit1.hint
+msgid "Local network"
+msgstr ""
+
 #: tmainform.iptableslabel.caption
 msgctxt "tmainform.iptableslabel.caption"
 msgid "iptables"
@@ -35,15 +45,15 @@ msgid "LAN"
 msgstr ""
 
 #: tmainform.label3.caption
-msgid "BlackList of websites"
+msgid "BlackList of domains"
 msgstr ""
 
 #: tmainform.label6.caption
-msgid "VIP-clients (IP-Address)"
+msgid "VIP-clients (IP-address)"
 msgstr ""
 
 #: tmainform.label7.caption
-msgid "WhiteList of websites"
+msgid "WhiteList of domains"
 msgstr ""
 
 #: tmainform.label8.caption
@@ -70,6 +80,11 @@ msgstr ""
 #: tmainform.wwwlabel.caption
 msgctxt "tmainform.wwwlabel.caption"
 msgid "www"
+msgstr ""
+
+#: tmainform.wwwlabel.hint
+msgctxt "tmainform.wwwlabel.hint"
+msgid "ping google.com"
 msgstr ""
 
 #: unit1.screatecert

@@ -13,7 +13,7 @@ uses
 
 begin
   RequireDerivedFormResource:=True;
-  Application.Title:='Bastion-v0.4';
+  Application.Title:='Bastion-v1.0';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
