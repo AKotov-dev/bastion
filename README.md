@@ -3,7 +3,7 @@ Bastion - gateway and content filter for the office network
 Dependencies: `iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server dnsmasq`
 
 Three-level filtering HTTP/HTTPS:
-+ Squid + Black/White lists of sites + VIP-users
++ Squid + Black/White lists of domains + VIP-users
 + IPTables + IPSet (blocking host=multiple IP) + dictionary filtering
 + SquidAnalyzer - internet connection log analyzer
 
