@@ -2,10 +2,10 @@
 name=bastion
 
 [VERSION]
-version=0.4
+version=1.0
 
 [RELEASE]
-release=1.mga8
+release=0.mga8
 
 [GROUP]
 group=Networking/Other
