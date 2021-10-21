@@ -14,6 +14,8 @@ type
 
   TMainForm = class(TForm)
     DNSCheckBox: TCheckBox;
+    SMBCheckBox: TCheckBox;
+    SMBSh: TShape;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
@@ -43,7 +45,6 @@ type
     SaveDialog1: TSaveDialog;
     StaticText1: TStaticText;
     XMLPropStorage1: TXMLPropStorage;
-    procedure DNSCheckBoxChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure NewCertBtnClick(Sender: TObject);
     procedure RestartBtnClick(Sender: TObject);
@@ -51,6 +52,7 @@ type
     procedure FormResize(Sender: TObject);
     procedure StartProcess;
     procedure DNSMasqConf;
+    procedure SambaConf;
 
   private
 
@@ -100,6 +102,98 @@ begin
   end;
 end;
 
+//Запускаем Samba
+procedure TMainForm.SambaConf;
+var
+  Conf: TStringList;
+  hostname: ansistring;
+begin
+  try
+    Conf := TStringList.Create;
+
+    //Создаём общий каталог
+    if not DirectoryExists('/usr/local/Common') then
+    begin
+      MkDir('/usr/local/Common');
+      RunCommand('/bin/bash', ['-c', 'chmod 777 /usr/local/Common'], hostname);
+    end;
+
+    //Узнаём имя сервера
+    if RunCommand('/bin/bash', ['-c', 'hostname'], hostname) then
+      //Создаём /etc/htb/htb.samba/smb.conf
+      with Conf do
+      begin
+        Add('[global]');
+        Add('');
+        Add('workgroup = WORKGROUP');
+        Add('server string = htb-enot');
+        Add('');
+        Add('interfaces = 127.0.0.1 ' + Trim(Edit2.Text));
+        Add('');
+        Add('netbios name = ' + Trim(hostname));
+        Add('');
+   { if MasterOn.Checked then //Master Browser? (Mageia 2 - указывать явно)
+    begin
+      Add('domain master = no');
+      Add('local master = yes');
+      Add('os level = 86');
+      Add('preferred master = yes');
+      Add('');
+    end
+    else
+    begin}
+        Add('domain master = no');
+        Add('local master = no');
+        Add('preferred master = no');
+        Add('');
+        //end;
+        Add('security = user');
+        Add('map to guest = Bad Password');
+        Add('');
+        Add('dos charset = cp1251');
+        Add('unix charset = utf8');
+        Add('');
+        Add('#Отключаем printcab');
+        Add('load printers = no');
+        Add('show add printer wizard = no');
+        Add('printing = bsd');
+        Add('printcap name = /dev/null');
+        Add('disable spoolss = yes');
+        Add('');
+        Add('#Общий ресурс');
+        Add('[Common]');
+        Add('path = /usr/local/Common');
+        Add('public = yes');
+        Add('browseable = yes');
+        Add('read only = no');
+        Add('guest ok = yes');
+        Add('');
+        Add('#Корзина');
+        Add('vfs object = recycle');
+        Add('recycle:keeptree = yes');
+        Add('recycle:version = yes');
+        Add('recycle:repository = .recycle');
+        Add('recycle:touch_mtime = yes');
+        Add('recycle:touch = yes');
+        Add('recycle:maxsize = 0');
+        Add('recycle:exclude = *.tmp, *.TMP, *.temp, ~$*, ?~$*, ~*');
+        Add('recycle:exclude_dir = .recycle');
+      end;
+
+    //Копируем правленный файл в рабочий каталог samba
+    Conf.SaveToFile('/etc/samba/smb.conf');
+
+    //Копируем файл автоочистки в планировщик, если его там нет
+ { if not FileExists('/etc/cron.monthly/recycle-clear') then
+    MainForm.StartProcess('cp -f /etc/htb/htb.samba/recycle-clear /etc/cron.monthly');
+  }
+  finally
+    Conf.Free;
+  end;
+end;
+
+
+//Конфигурация и запуск DNSMasq
 procedure TMainForm.DNSMasqConf;
 var
   i: integer;
@@ -147,7 +241,7 @@ begin
         end;
 
       Conf.Add('#Диапазон выдачи IP-адресов (аренда 72 часа)');
-      Conf.Add('dhcp-range=' + LanIP + '20,' + LanIP + '250,72h');
+      Conf.Add('dhcp-range=' + LanIP + '50,' + LanIP + '250,72h');
       Conf.Add('');
 
       Conf.Add('#Отключить DHCP_INFO-PROXY для Windows 7+');
@@ -180,8 +274,6 @@ begin
   try
     if RunCommand('/bin/bash', ['-c', 'squid -v | head -n1'], S) then
       MainForm.Caption := Concat(Application.Title, ' [', Trim(S), ']');
-
-   // MainForm.Caption := Application.Title;
 
     //Запуск потока отображения ping
     FStartShowPingThread := CheckPing.Create(False);
@@ -218,6 +310,12 @@ begin
       DNSCheckBox.Checked := True
     else
       DNSCheckBox.Checked := False;
+
+    //Флаг запуска Samba для bastion.sh
+    if FileExists('/etc/squid/samba-start') then
+      SMBCheckBox.Checked := True
+    else
+      SMBCheckBox.Checked := False;
   except
   end;
 end;
@@ -244,9 +342,31 @@ begin
     Memo3.Lines.SaveToFile('/etc/squid/whitelist.txt');
     Memo2.Lines.SaveToFile('/etc/squid/vip-users.txt');
 
-    //Запуск DNS/DHCP (DNSMasq)
+    //Конфигурация и запуск DNSMasq (флаг запуска dnsmasq-start для /etc/squid/bastion.sh)
     if DNSCheckBox.Checked then
+    begin
+      Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
       DNSMasqConf;
+    end
+    else
+      DeleteFile('/etc/squid/dnsmasq-start');
+
+    //Конфигурация и запуск Samba (флаг запуска samba-start для /etc/squid/bastion.sh)
+    if SMBCheckBox.Checked then
+    begin
+      Memo3.Lines.SaveToFile('/etc/squid/samba-start');
+
+      if RunCommand('/bin/bash',
+        ['-c', 'cp -f /etc/squid/recycle-cleaner.sh /etc/cron.monthly/recycle-cleaner.sh; '
+        + 'chmod 755 /etc/cron.monthly/recycle-cleaner.sh'], S) then
+
+        SambaConf;
+    end
+    else
+    begin
+      DeleteFile('/etc/squid/samba-start');
+      DeleteFile('/etc/cron.monthly/recycle-cleaner.sh');
+    end;
 
     Application.ProcessMessages;
 
@@ -260,15 +380,6 @@ end;
 procedure TMainForm.FormShow(Sender: TObject);
 begin
   XMLPropStorage1.Restore;
-end;
-
-//Флаг запуска DNSMasq для bastion.sh
-procedure TMainForm.DNSCheckBoxChange(Sender: TObject);
-begin
-  if DNSCheckBox.Checked then
-    Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start')
-  else
-    DeleteFile('/etc/squid/dnsmasq-start');
 end;
 
 //Создание сертификата

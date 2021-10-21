@@ -22,6 +22,7 @@ type
     procedure ShowSquid;
     procedure ShowApache;
     procedure ShowDNSMasq;
+    procedure ShowSamba;
 
   end;
 
@@ -82,6 +83,14 @@ begin
       Result.LoadFromStream(ExProcess.Output);
       Synchronize(@ShowDNSMasq);
 
+      //Samba status
+      ExProcess.Parameters.Delete(1);
+      ExProcess.Parameters.Add('systemctl is-active smb nmb');
+      Exprocess.Execute;
+
+      Result.LoadFromStream(ExProcess.Output);
+      Synchronize(@ShowSamba);
+
       Sleep(250);
     end;
 
@@ -136,6 +145,17 @@ begin
   else
     MainForm.DNSMasqSh.Brush.Color := clYellow;
   MainForm.DNSMasqSh.Repaint;
+end;
+
+//Samba status
+procedure ShowStatus.ShowSamba;
+begin
+  Application.ProcessMessages;
+  if (Trim(Result[0]) = 'active') and (Trim(Result[1]) = 'active') then
+    MainForm.SMBSh.Brush.Color := clLime
+  else
+    MainForm.SMBSh.Brush.Color := clYellow;
+  MainForm.SMBSh.Repaint;
 end;
 
 end.

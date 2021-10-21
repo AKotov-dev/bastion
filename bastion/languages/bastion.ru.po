@@ -27,9 +27,14 @@ msgid "dnsmasq"
 msgstr ""
 
 #: tmainform.dnscheckbox.hint
+#, fuzzy
+#| msgid ""
+#| "enabling dns/dhcp\n"
+#| "range: x.x.x.20-x.x.x.250\n"
+msgctxt "tmainform.dnscheckbox.hint"
 msgid ""
 "enabling dns/dhcp\n"
-"range: x.x.x.20-x.x.x.250\n"
+"range: x.x.x.50-x.x.x.250\n"
 msgstr ""
 "включение dns/dhcp\n"
 "диапазон: x.x.x.20-x.x.x.250\n"
@@ -84,6 +89,23 @@ msgstr "Новый сертификат"
 msgid "Restart"
 msgstr "Рестарт"
 
+#: tmainform.smbcheckbox.caption
+msgid "samba"
+msgstr ""
+
+#: tmainform.smbcheckbox.hint
+#, fuzzy
+#| msgid ""
+#| "enabling dns/dhcp\n"
+#| "range: x.x.x.20-x.x.x.250\n"
+msgctxt "tmainform.smbcheckbox.hint"
+msgid ""
+"enabling smb\n"
+"\\\\LAN-IP\\Common\n"
+msgstr ""
+"включение dns/dhcp\n"
+"диапазон: x.x.x.20-x.x.x.250\n"
+
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
 msgid "squid"
@@ -110,3 +132,4 @@ msgstr "Создание сертификата"
 #: unit1.snewcertwarn
 msgid "Create a new squid.der certificate for installation on clients computers?"
 msgstr "Создать новый сертификат squid.der для установки на компьютеры клиентов?"
+

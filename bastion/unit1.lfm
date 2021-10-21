@@ -1,12 +1,12 @@
 object MainForm: TMainForm
-  Left = 303
-  Height = 632
+  Left = 301
+  Height = 644
   Top = 125
-  Width = 819
+  Width = 839
   ActiveControl = RestartBtn
   Caption = 'Bastion'
-  ClientHeight = 632
-  ClientWidth = 819
+  ClientHeight = 644
+  ClientWidth = 839
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
@@ -18,7 +18,7 @@ object MainForm: TMainForm
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = StaticText1
     Left = 6
-    Height = 491
+    Height = 503
     Top = 121
     Width = 258
     Anchors = [akTop, akLeft, akBottom]
@@ -48,7 +48,7 @@ object MainForm: TMainForm
     AnchorSideTop.Control = Label3
     AnchorSideTop.Side = asrCenter
     AnchorSideBottom.Control = Memo2
-    Left = 555
+    Left = 575
     Height = 15
     Top = 101
     Width = 141
@@ -65,8 +65,8 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StaticText1
-    Left = 555
-    Height = 491
+    Left = 575
+    Height = 503
     Top = 121
     Width = 258
     Anchors = [akTop, akRight, akBottom]
@@ -85,9 +85,9 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Memo2
     AnchorSideBottom.Control = StaticText1
     Left = 270
-    Height = 491
+    Height = 503
     Top = 121
-    Width = 279
+    Width = 299
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 6
     BorderSpacing.Top = 5
@@ -114,17 +114,17 @@ object MainForm: TMainForm
     Left = 0
     Height = 90
     Top = 0
-    Width = 819
+    Width = 839
     Align = alTop
     ClientHeight = 88
-    ClientWidth = 817
+    ClientWidth = 837
     TabOrder = 0
     object RestartBtn: TBitBtn
       AnchorSideTop.Control = NewCertBtn
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
-      Left = 715
+      Left = 735
       Height = 30
       Top = 5
       Width = 96
@@ -166,7 +166,7 @@ object MainForm: TMainForm
       AnchorSideTop.Control = Edit1
       AnchorSideRight.Control = RestartBtn
       AnchorSideBottom.Side = asrBottom
-      Left = 547
+      Left = 567
       Height = 30
       Top = 5
       Width = 163
@@ -208,7 +208,7 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = RestartBtn
       AnchorSideRight.Control = GroupBox1
       AnchorSideRight.Side = asrBottom
-      Left = 681
+      Left = 701
       Height = 15
       Top = 65
       Width = 130
@@ -280,7 +280,7 @@ object MainForm: TMainForm
     end
     object Label10: TLabel
       AnchorSideRight.Control = ProgressBar1
-      Left = 416
+      Left = 436
       Height = 30
       Top = 50
       Width = 257
@@ -314,12 +314,11 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 213
       Height = 32
-      Hint = 'enabling dns/dhcp'#10'range: x.x.x.20-x.x.x.250'
+      Hint = 'enabling dns/dhcp'#10'range: x.x.x.50-x.x.x.250'
       Top = 56
       Width = 89
       BorderSpacing.Left = 10
       Caption = 'dnsmasq'
-      OnChange = DNSCheckBoxChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
@@ -392,12 +391,43 @@ object MainForm: TMainForm
       Brush.Color = clYellow
       Shape = stCircle
     end
+    object SMBCheckBox: TCheckBox
+      AnchorSideLeft.Control = DNSCheckBox
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = DNSCheckBox
+      AnchorSideTop.Side = asrCenter
+      Left = 312
+      Height = 32
+      Hint = 'enabling smb'#10'\\LAN-IP\Common'
+      Top = 56
+      Width = 74
+      BorderSpacing.Left = 10
+      Caption = 'samba'
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+    end
+    object SMBSh: TShape
+      AnchorSideLeft.Control = SMBCheckBox
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = ApacheSh
+      AnchorSideBottom.Side = asrCenter
+      Left = 343
+      Height = 11
+      Top = 50
+      Width = 12
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Left = 3
+      Brush.Color = clYellow
+      Shape = stCircle
+    end
   end
   object StaticText1: TStaticText
     Left = 0
     Height = 20
-    Top = 612
-    Width = 819
+    Top = 624
+    Width = 839
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
     Color = clDefault
