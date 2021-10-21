@@ -1,8 +1,8 @@
 {"version":1,"strings":[
 {"hash":143306782,"name":"tmainform.caption","sourcebytes":[66,97,115,116,105,111,110],"value":"Bastion"},
-{"hash":56500643,"name":"tmainform.label3.caption","sourcebytes":[66,108,97,99,107,76,105,115,116,32,111,102,32,100,111,109,97,105,110,115],"value":"BlackList of domains"},
+{"hash":88114953,"name":"tmainform.label3.caption","sourcebytes":[66,108,97,99,107,76,105,115,116,32,40,46,100,111,109,97,105,110,46,99,111,109,41],"value":"BlackList (.domain.com)"},
 {"hash":253792729,"name":"tmainform.label6.caption","sourcebytes":[86,73,80,45,99,108,105,101,110,116,115,32,40,73,80,45,97,100,100,114,101,115,115,41],"value":"VIP-clients (IP-address)"},
-{"hash":5148819,"name":"tmainform.label7.caption","sourcebytes":[87,104,105,116,101,76,105,115,116,32,111,102,32,100,111,109,97,105,110,115],"value":"WhiteList of domains"},
+{"hash":266113033,"name":"tmainform.label7.caption","sourcebytes":[87,104,105,116,101,76,105,115,116,32,40,46,100,111,109,97,105,110,46,99,111,109,41],"value":"WhiteList (.domain.com)"},
 {"hash":147499204,"name":"tmainform.restartbtn.caption","sourcebytes":[82,101,115,116,97,114,116],"value":"Restart"},
 {"hash":8031220,"name":"tmainform.squidlabel.caption","sourcebytes":[115,113,117,105,100],"value":"squid"},
 {"hash":128423363,"name":"tmainform.iptableslabel.caption","sourcebytes":[105,112,116,97,98,108,101,115],"value":"iptables"},

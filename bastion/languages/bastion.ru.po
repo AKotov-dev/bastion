@@ -66,7 +66,9 @@ msgid "LAN"
 msgstr ""
 
 #: tmainform.label3.caption
-msgid "BlackList of domains"
+#, fuzzy
+#| msgid "BlackList of domains"
+msgid "BlackList (.domain.com)"
 msgstr "Черный список доменов"
 
 #: tmainform.label6.caption
@@ -74,7 +76,9 @@ msgid "VIP-clients (IP-address)"
 msgstr "VIP-клиенты (IP-адреса)"
 
 #: tmainform.label7.caption
-msgid "WhiteList of domains"
+#, fuzzy
+#| msgid "WhiteList of domains"
+msgid "WhiteList (.domain.com)"
 msgstr "Белый список доменов"
 
 #: tmainform.label8.caption
