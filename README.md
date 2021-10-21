@@ -16,6 +16,6 @@ Configure the `WAN/LAN` on the computer acting as the gateway and run `Bastion`.
 Note:
 + Bastion can be configured/run without GUI (scripts only)
 + Bastion has built-in DNS/DHCP (dnsmasq); address pool `x.x.x.50-x.x.x.250`
-+ When `samba` is enabled, a shared folder `/usr/local/Common` is created with a `.recycle` bin, which is cleaned every month. The `\\LAN-IP\Common` folder can be connected as a shared disk.
++ When `samba` is enabled, a shared folder `/usr/local/Common` is created with a `.recycle` bin, which is cleaned every month. The `\\LAN-IP\Common` folder can be connected as a shared disk
 
 ![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot.png)
