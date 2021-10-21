@@ -314,7 +314,7 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 213
       Height = 32
-      Hint = 'enabling dns/dhcp'#10'range: x.x.x.50-x.x.x.250'
+      Hint = 'Enabling DNS/DHCP'#10'IP range: x.x.x.50-x.x.x.250'
       Top = 56
       Width = 89
       BorderSpacing.Left = 10
@@ -398,7 +398,7 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 312
       Height = 32
-      Hint = 'enabling smb'#10'\\LAN-IP\Common'
+      Hint = 'Enabling SMB'#10'Shared folder: \\LAN-IP\Common'
       Top = 56
       Width = 74
       BorderSpacing.Left = 10

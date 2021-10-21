@@ -18,8 +18,8 @@ msgstr ""
 #: tmainform.dnscheckbox.hint
 msgctxt "tmainform.dnscheckbox.hint"
 msgid ""
-"enabling dns/dhcp\n"
-"range: x.x.x.50-x.x.x.250\n"
+"Enabling DNS/DHCP\n"
+"IP range: x.x.x.50-x.x.x.250\n"
 msgstr ""
 
 #: tmainform.edit1.hint
@@ -76,8 +76,8 @@ msgstr ""
 #: tmainform.smbcheckbox.hint
 msgctxt "tmainform.smbcheckbox.hint"
 msgid ""
-"enabling smb\n"
-"\\\\LAN-IP\\Common\n"
+"Enabling SMB\n"
+"Shared folder: \\\\LAN-IP\\Common\n"
 msgstr ""
 
 #: tmainform.squidlabel.caption

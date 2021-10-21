@@ -37,10 +37,10 @@ object MainForm: TMainForm
     Left = 6
     Height = 15
     Top = 101
-    Width = 124
+    Width = 142
     BorderSpacing.Top = 11
     BorderSpacing.Bottom = 5
-    Caption = 'BlackList of domains'
+    Caption = 'BlackList (.domain.com)'
     ParentColor = False
   end
   object Label6: TLabel
@@ -104,10 +104,10 @@ object MainForm: TMainForm
     Left = 270
     Height = 15
     Top = 101
-    Width = 128
+    Width = 146
     BorderSpacing.Top = 20
     BorderSpacing.Bottom = 5
-    Caption = 'WhiteList of domains'
+    Caption = 'WhiteList (.domain.com)'
     ParentColor = False
   end
   object GroupBox1: TGroupBox
@@ -314,7 +314,7 @@ object MainForm: TMainForm
       AnchorSideTop.Side = asrCenter
       Left = 213
       Height = 32
-      Hint = 'enabling dns/dhcp'#10'range: x.x.x.50-x.x.x.250'
+      Hint = 'enabling dns/dhcp'#10'ip range: x.x.x.50-x.x.x.250'
       Top = 56
       Width = 89
       BorderSpacing.Left = 10

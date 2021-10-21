@@ -27,17 +27,13 @@ msgid "dnsmasq"
 msgstr ""
 
 #: tmainform.dnscheckbox.hint
-#, fuzzy
-#| msgid ""
-#| "enabling dns/dhcp\n"
-#| "range: x.x.x.20-x.x.x.250\n"
 msgctxt "tmainform.dnscheckbox.hint"
 msgid ""
-"enabling dns/dhcp\n"
-"range: x.x.x.50-x.x.x.250\n"
+"Enabling DNS/DHCP\n"
+"IP range: x.x.x.50-x.x.x.250\n"
 msgstr ""
-"включение dns/dhcp\n"
-"диапазон: x.x.x.20-x.x.x.250\n"
+"Включение DNS/DHCP\n"
+"Диапазон IP: x.x.x.50-x.x.x.250\n"
 
 #: tmainform.edit1.hint
 msgid "Local network"
@@ -66,20 +62,16 @@ msgid "LAN"
 msgstr ""
 
 #: tmainform.label3.caption
-#, fuzzy
-#| msgid "BlackList of domains"
 msgid "BlackList (.domain.com)"
-msgstr "Черный список доменов"
+msgstr "Черный список (.domain.com)"
 
 #: tmainform.label6.caption
 msgid "VIP-clients (IP-address)"
 msgstr "VIP-клиенты (IP-адреса)"
 
 #: tmainform.label7.caption
-#, fuzzy
-#| msgid "WhiteList of domains"
 msgid "WhiteList (.domain.com)"
-msgstr "Белый список доменов"
+msgstr "Белый список (.domain.com)"
 
 #: tmainform.label8.caption
 msgid "WAN"
@@ -98,17 +90,13 @@ msgid "samba"
 msgstr ""
 
 #: tmainform.smbcheckbox.hint
-#, fuzzy
-#| msgid ""
-#| "enabling dns/dhcp\n"
-#| "range: x.x.x.20-x.x.x.250\n"
 msgctxt "tmainform.smbcheckbox.hint"
 msgid ""
-"enabling smb\n"
-"\\\\LAN-IP\\Common\n"
+"Enabling SMB\n"
+"Shared folder: \\\\LAN-IP\\Common\n"
 msgstr ""
-"включение dns/dhcp\n"
-"диапазон: x.x.x.20-x.x.x.250\n"
+"Включение SMB\n"
+"Общая папка: \\\\LAN-IP\\Common\n"
 
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
@@ -136,4 +124,3 @@ msgstr "Создание сертификата"
 #: unit1.snewcertwarn
 msgid "Create a new squid.der certificate for installation on clients computers?"
 msgstr "Создать новый сертификат squid.der для установки на компьютеры клиентов?"
-
