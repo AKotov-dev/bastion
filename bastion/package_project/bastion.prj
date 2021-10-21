@@ -32,7 +32,7 @@ urlcopy=https://github.com/AKotov-dev/bastion
 license=GPLv3
 
 [DEPS]
-deps=iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server multitail dnsmasq
+deps=iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server multitail dnsmasq samba
 
 [META]
 meta=0
