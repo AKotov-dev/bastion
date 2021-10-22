@@ -100,7 +100,7 @@ msgstr ""
 
 #: tmainform.speedbutton1.hint
 msgid "Backup/Restore"
-msgstr ""
+msgstr "Бэкап/Рестор"
 
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
