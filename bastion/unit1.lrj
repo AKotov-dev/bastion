@@ -19,5 +19,6 @@
 {"hash":190462145,"name":"tmainform.dnscheckbox.caption","sourcebytes":[100,110,115,109,97,115,113],"value":"dnsmasq"},
 {"hash":230451262,"name":"tmainform.smbcheckbox.hint","sourcebytes":[69,110,97,98,108,105,110,103,32,83,77,66,10,83,104,97,114,101,100,32,102,111,108,100,101,114,58,32,92,92,76,65,78,45,73,80,92,67,111,109,109,111,110],"value":"Enabling SMB\nShared folder: \\\\LAN-IP\\Common"},
 {"hash":7963521,"name":"tmainform.smbcheckbox.caption","sourcebytes":[115,97,109,98,97],"value":"samba"},
+{"hash":258502981,"name":"tmainform.speedbutton1.hint","sourcebytes":[66,97,99,107,117,112,47,82,101,115,116,111,114,101],"value":"Backup/Restore"},
 {"hash":247908389,"name":"tmainform.statictext1.caption","sourcebytes":[76,105,99,101,110,115,101,58,32,71,80,76,118,51,32,32,32,65,117,116,104,111,114,58,32,97,108,101,120,95,113,95,50,48,48,48,32,40,67,41,32,50,48,50,49,32,32,32,85,82,76,58,32,104,116,116,112,115,58,47,47,108,105,110,117,120,102,111,114,117,109,46,114,117],"value":"License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"}
 ]}

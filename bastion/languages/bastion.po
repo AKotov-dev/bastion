@@ -80,6 +80,10 @@ msgid ""
 "Shared folder: \\\\LAN-IP\\Common\n"
 msgstr ""
 
+#: tmainform.speedbutton1.hint
+msgid "Backup/Restore"
+msgstr ""
+
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
 msgid "squid"
@@ -97,6 +101,12 @@ msgstr ""
 #: tmainform.wwwlabel.hint
 msgctxt "tmainform.wwwlabel.hint"
 msgid "ping google.com"
+msgstr ""
+
+#: unit1.sbackuprestore
+msgid ""
+"Yes - Backup configuration\n"
+"No - Restore configuration\n"
 msgstr ""
 
 #: unit1.screatecert

@@ -98,6 +98,10 @@ msgstr ""
 "Включение SMB\n"
 "Общая папка: \\\\LAN-IP\\Common\n"
 
+#: tmainform.speedbutton1.hint
+msgid "Backup/Restore"
+msgstr ""
+
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
 msgid "squid"
@@ -117,6 +121,14 @@ msgctxt "tmainform.wwwlabel.hint"
 msgid "ping google.com"
 msgstr ""
 
+#: unit1.sbackuprestore
+msgid ""
+"Yes - Backup configuration\n"
+"No - Restore configuration\n"
+msgstr ""
+"Да - Бэкап конфигурации\n"
+"Нет - Восстановить конфигурацию\n"
+
 #: unit1.screatecert
 msgid "Creating a certificate"
 msgstr "Создание сертификата"
@@ -127,5 +139,4 @@ msgstr "Создать новый сертификат squid.der для уста
 
 #: unit1.snolanip
 msgid "LAN is set incorrectly!"
-msgstr ""
-
+msgstr "LAN указан неверно!"

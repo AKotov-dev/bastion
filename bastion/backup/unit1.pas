@@ -14,6 +14,8 @@ type
 
   TMainForm = class(TForm)
     DNSCheckBox: TCheckBox;
+    OpenDialog1: TOpenDialog;
+    SaveDialog2: TSaveDialog;
     SMBCheckBox: TCheckBox;
     SMBSh: TShape;
     Edit1: TEdit;
@@ -22,6 +24,7 @@ type
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
+    SpeedButton1: TSpeedButton;
     WWWSh: TShape;
     IPTablesSh: TShape;
     SquidSh: TShape;
@@ -50,9 +53,11 @@ type
     procedure RestartBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
     procedure StartProcess;
     procedure DNSMasqConf;
     procedure SambaConf;
+    procedure ReadParams;
 
   private
 
@@ -65,6 +70,7 @@ resourcestring
     'Create a new squid.der certificate for installation on clients computers?';
   SCreateCert = 'Creating a certificate';
   SNoLanIP = 'LAN is set incorrectly!';
+  SBackupRestore = 'Yes - Backup configuration' + #13#10 + 'No - Restore configuration';
 
 var
   MainForm: TMainForm;
@@ -101,6 +107,42 @@ begin
   finally
     ExProcess.Free;
   end;
+end;
+
+//Чтение/отображение данных из файлов конфигураций
+procedure TMainForm.ReadParams;
+var
+  S: ansistring;
+begin
+  //WAN/LAN
+  if RunCommand('/bin/bash', ['-c',
+    'grep "wan=" /etc/squid/bastion.sh | sed "s/\"//g" | cut -b 5-'], S) then
+    Edit3.Text := Trim(S);
+
+  if RunCommand('/bin/bash', ['-c',
+    'grep "lan=" /etc/squid/bastion.sh | sed "s/\"//g" | cut -b 5-'], S) then
+    Edit2.Text := Trim(S);
+
+  //Network
+  if RunCommand('/bin/bash', ['-c', 'cat /etc/squid/localnet.txt'], S) then
+    Edit1.Text := Trim(S);
+
+  //BlackList/WhiteList/Vip-Users
+  Memo1.Lines.LoadFromFile('/etc/squid/blacklist.txt');
+  Memo3.Lines.LoadFromFile('/etc/squid/whitelist.txt');
+  Memo2.Lines.LoadFromFile('/etc/squid/vip-users.txt');
+
+  //Флаг запуска DNSMasq для bastion.sh
+  if FileExists('/etc/squid/dnsmasq-start') then
+    DNSCheckBox.Checked := True
+  else
+    DNSCheckBox.Checked := False;
+
+  //Флаг запуска Samba для bastion.sh
+  if FileExists('/etc/squid/samba-start') then
+    SMBCheckBox.Checked := True
+  else
+    SMBCheckBox.Checked := False;
 end;
 
 //Конфигурация и запуск Samba
@@ -177,6 +219,33 @@ begin
   Memo3.Width := Memo1.Width;
 end;
 
+//BackUp/Restore
+procedure TMainForm.SpeedButton1Click(Sender: TObject);
+var
+  S: ansistring;
+  ButtonSelected: integer;
+begin
+  ButtonSelected := MessageDlg(SBackupRestore, mtInformation, mbYesNoCancel, 0);
+
+  case ButtonSelected of
+    mrYes:
+    begin
+      if SaveDialog2.Execute then
+        if RunCommand('/bin/bash',
+          ['-c', 'cd /etc/squid; tar -czf backup.tar.gz ./{*.txt,*.sh,*.pem,*.der,*.conf}'],
+          S) then
+          CopyFile('/etc/squid/backup.tar.gz', SaveDialog2.FileName, False);
+    end;
+    mrNo:
+    begin
+      if OpenDialog1.Execute then
+        if RunCommand('/bin/bash', ['-c', 'cd /etc/squid; tar -xzf "' +
+          OpenDialog1.FileName + '"'], S) then
+          ReadParams;
+    end;
+  end;
+end;
+
 procedure TMainForm.FormCreate(Sender: TObject);
 var
   S: ansistring;
@@ -198,35 +267,8 @@ begin
       MkDir(GetUserDir + '/.config');
     XMLPropStorage1.FileName := GetUserDir + '/.config/bastion.conf';
 
-    //WAN/LAN
-    if RunCommand('/bin/bash',
-      ['-c', 'grep "wan=" /etc/squid/bastion.sh | sed "s/\"//g" | cut -b 5-'], S) then
-      Edit3.Text := Trim(S);
-
-    if RunCommand('/bin/bash',
-      ['-c', 'grep "lan=" /etc/squid/bastion.sh | sed "s/\"//g" | cut -b 5-'], S) then
-      Edit2.Text := Trim(S);
-
-    //Network
-    if RunCommand('/bin/bash', ['-c', 'cat /etc/squid/localnet.txt'], S) then
-      Edit1.Text := Trim(S);
-
-    //BlackList/WhiteList/Vip-Users
-    Memo1.Lines.LoadFromFile('/etc/squid/blacklist.txt');
-    Memo3.Lines.LoadFromFile('/etc/squid/whitelist.txt');
-    Memo2.Lines.LoadFromFile('/etc/squid/vip-users.txt');
-
-    //Флаг запуска DNSMasq для bastion.sh
-    if FileExists('/etc/squid/dnsmasq-start') then
-      DNSCheckBox.Checked := True
-    else
-      DNSCheckBox.Checked := False;
-
-    //Флаг запуска Samba для bastion.sh
-    if FileExists('/etc/squid/samba-start') then
-      SMBCheckBox.Checked := True
-    else
-      SMBCheckBox.Checked := False;
+    //Чтение/отображение данных из файлов конфигураций
+    ReadParams;
   except
   end;
 end;
@@ -277,18 +319,10 @@ begin
     if SMBCheckBox.Checked then
     begin
       Memo3.Lines.SaveToFile('/etc/squid/samba-start');
-
-      if RunCommand('/bin/bash',
-        ['-c', 'cp -f /etc/squid/recycle-cleaner.sh /etc/cron.monthly/recycle-cleaner.sh; '
-        + 'chmod 755 /etc/cron.monthly/recycle-cleaner.sh'], S) then
-
-        SambaConf;
+      SambaConf;
     end
     else
-    begin
       DeleteFile('/etc/squid/samba-start');
-      DeleteFile('/etc/cron.monthly/recycle-cleaner.sh');
-    end;
 
     Application.ProcessMessages;
 
