@@ -64,6 +64,7 @@ resourcestring
   SNewCertWarn =
     'Create a new squid.der certificate for installation on clients computers?';
   SCreateCert = 'Creating a certificate';
+  SNoLanIP = 'LAN is set incorrectly!';
 
 var
   MainForm: TMainForm;
@@ -102,161 +103,71 @@ begin
   end;
 end;
 
-//Запускаем Samba
+//Конфигурация и запуск Samba
 procedure TMainForm.SambaConf;
 var
-  Conf: TStringList;
-  hostname: ansistring;
+  S, netbios: ansistring;
 begin
-  try
-    Conf := TStringList.Create;
+  //Создаём общий каталог
+  if not DirectoryExists('/usr/local/Common') then
+  begin
+    MkDir('/usr/local/Common');
+    RunCommand('/bin/bash', ['-c', 'chmod 777 /usr/local/Common'], S);
+  end;
 
-    //Создаём общий каталог
-    if not DirectoryExists('/usr/local/Common') then
-    begin
-      MkDir('/usr/local/Common');
-      RunCommand('/bin/bash', ['-c', 'chmod 777 /usr/local/Common'], hostname);
-    end;
+  if RunCommand('/bin/bash', ['-c',
+    'sed -i "s/interfaces\ =.*/interfaces = 127.0.0.1 ' + Trim(Edit2.Text) +
+    '/g" /etc/samba/smb.conf'], S) then
 
     //Узнаём имя сервера
-    if RunCommand('/bin/bash', ['-c', 'hostname'], hostname) then
-      //Создаём /etc/htb/htb.samba/smb.conf
-      with Conf do
-      begin
-        Add('[global]');
-        Add('');
-        Add('workgroup = WORKGROUP');
-        Add('server string = htb-enot');
-        Add('');
-        Add('interfaces = 127.0.0.1 ' + Trim(Edit2.Text));
-        Add('');
-        Add('netbios name = ' + Trim(hostname));
-        Add('');
-   { if MasterOn.Checked then //Master Browser? (Mageia 2 - указывать явно)
-    begin
-      Add('domain master = no');
-      Add('local master = yes');
-      Add('os level = 86');
-      Add('preferred master = yes');
-      Add('');
-    end
-    else
-    begin}
-        Add('domain master = no');
-        Add('local master = no');
-        Add('preferred master = no');
-        Add('');
-        //end;
-        Add('security = user');
-        Add('map to guest = Bad Password');
-        Add('');
-        Add('dos charset = cp1251');
-        Add('unix charset = utf8');
-        Add('');
-        Add('#Отключаем printcab');
-        Add('load printers = no');
-        Add('show add printer wizard = no');
-        Add('printing = bsd');
-        Add('printcap name = /dev/null');
-        Add('disable spoolss = yes');
-        Add('');
-        Add('#Общий ресурс');
-        Add('[Common]');
-        Add('path = /usr/local/Common');
-        Add('public = yes');
-        Add('browseable = yes');
-        Add('read only = no');
-        Add('guest ok = yes');
-        Add('');
-        Add('#Корзина');
-        Add('vfs object = recycle');
-        Add('recycle:keeptree = yes');
-        Add('recycle:version = yes');
-        Add('recycle:repository = .recycle');
-        Add('recycle:touch_mtime = yes');
-        Add('recycle:touch = yes');
-        Add('recycle:maxsize = 0');
-        Add('recycle:exclude = *.tmp, *.TMP, *.temp, ~$*, ?~$*, ~*');
-        Add('recycle:exclude_dir = .recycle');
-      end;
+    if RunCommand('/bin/bash', ['-c', 'hostname'], S) then
 
-    //Копируем правленный файл в рабочий каталог samba
-    Conf.SaveToFile('/etc/samba/smb.conf');
-
-    //Копируем файл автоочистки в планировщик, если его там нет
- { if not FileExists('/etc/cron.monthly/recycle-clear') then
-    MainForm.StartProcess('cp -f /etc/htb/htb.samba/recycle-clear /etc/cron.monthly');
-  }
-  finally
-    Conf.Free;
-  end;
+      RunCommand('/bin/bash',
+        ['-c', 'sed -i "s/netbios\ name\ =.*/netbios name = ' +
+        Trim(S) + '/g" /etc/samba/smb.conf'], netbios);
 end;
-
 
 //Конфигурация и запуск DNSMasq
 procedure TMainForm.DNSMasqConf;
 var
   i: integer;
-  LanIP: ansistring;
-  Conf: TStringList;
+  LanIP, S: ansistring;
 begin
-  try
-    Conf := TStringList.Create;
+  LanIP := '';
+
+  //Слушать на интерфейсах
+  if RunCommand('/bin/bash', ['-c', 'sed -i "s/interface=.*/interface=' +
+    Trim(Edit2.Text) + '/g" /etc/dnsmasq.conf'], S) then
 
     //Узнаём IP-адрес интерфейса LAN
     if RunCommand('/bin/bash', ['-c', 'ifconfig ' + Trim(Edit2.Text) +
-      ' | grep inet | awk ' + '''' + '{ print $2 }' + ''''], LanIP) then
-    begin
-      LanIP := Trim(LanIP);
+      ' | grep inet | head -n1 | awk ' + '''' + '{ print $2 }' + ''''], LanIP) then
 
-      Conf.Add('#Авторитетный DHCP сервер');
-      Conf.Add('dhcp-authoritative');
-      Conf.Add('');
+      //Слушать на интерфейсах
+      if RunCommand('/bin/bash',
+        ['-c', 'sed -i "s/listen-address=.*/listen-address=127.0.0.1,' +
+        Trim(LanIP) + '/g" /etc/dnsmasq.conf'], S) then
 
-      Conf.Add('#Слушать на интерфейсах ($lan=enp0s8=192.168.1.1+lo)');
-      Conf.Add('interface=' + Trim(Edit2.Text));
-      Conf.Add('listen-address=127.0.0.1,' + LanIP);
-      Conf.Add('');
+        //Отдать параметры клиенту
+        if RunCommand('/bin/bash',
+          ['-c', 'sed -i "s/dhcp-option=option:router,.*/dhcp-option=option:router,' +
+          Trim(LanIP) + '/g" /etc/dnsmasq.conf'], S) then
 
-      Conf.Add('#Не использовать resolv.conf');
-      Conf.Add('no-resolv');
-      Conf.Add('');
+          if RunCommand('/bin/bash',
+            ['-c', 'sed -i "s/dhcp-option=option:dns-server,.*/dhcp-option=option:dns-server,'
+            + Trim(LanIP) + '/g" /etc/dnsmasq.conf'], S) then
 
-      Conf.Add('#Форвардинг DNS-запросов');
-      Conf.Add('server=8.8.8.8');
-      Conf.Add('server=8.8.4.4');
-      Conf.Add('');
+            //Диапазон выдачи IP-адресов (аренда 72 часа)
+            //Отбрасываем последний октет LanIP
+            for i := Length(LanIP) downto 1 do
+              if LanIP[i] = '.' then
+              begin
+                LanIP := Copy(LanIP, 1, i);
+                Break;
+              end;
 
-      Conf.Add('#Отдать параметры клиенту');
-      Conf.Add('dhcp-option=option:router,' + LanIP);
-      Conf.Add('dhcp-option=option:dns-server,' + LanIP);
-      Conf.Add('');
-
-      //Отбрасываем последний октет LanIP
-      for i := Length(LanIP) downto 1 do
-        if LanIP[i] = '.' then
-        begin
-          LanIP := Copy(LanIP, 1, i);
-          Break;
-        end;
-
-      Conf.Add('#Диапазон выдачи IP-адресов (аренда 72 часа)');
-      Conf.Add('dhcp-range=' + LanIP + '50,' + LanIP + '250,72h');
-      Conf.Add('');
-
-      Conf.Add('#Отключить DHCP_INFO-PROXY для Windows 7+');
-      Conf.Add('dhcp-option=252,"\n"');
-      Conf.Add('');
-
-      Conf.Add('#Настройки кеша DNS');
-      Conf.Add('cache-size=10000');
-      Conf.Add('no-negcache');
-
-      Conf.SaveToFile('/etc/dnsmasq.conf');
-    end;
-  finally
-    Conf.Free;
-  end;
+  RunCommand('/bin/bash', ['-c', 'sed -i "s/dhcp-range=.*/dhcp-range=' +
+    Trim(LanIP) + '50,' + Trim(LanIP) + '250' + '/g" /etc/dnsmasq.conf'], S);
 end;
 
 procedure TMainForm.FormResize(Sender: TObject);
@@ -326,6 +237,17 @@ var
   FStartTRDCommand: TThread;
 begin
   try
+    //Проверка соответствия LAN=IP для DNSMasq и Samba
+    if RunCommand('/bin/bash', ['-c', 'ifconfig ' + Trim(Edit2.Text) +
+      ' | grep inet | head -n1 | awk ' + '''' + '{ print $2 }' + ''''], S) then
+
+      //Если адрес LAN не определён - выход с ошибкой
+      if (Trim(Edit2.Text) = '') or (Trim(S) = '') then
+      begin
+        MessageDlg(SNoLanIP, mtError, [mbOK], 0);
+        Exit;
+      end;
+
     //Запись WAN/LAN
     if RunCommand('/bin/bash', ['-c', 'sed -i "s/wan=.*/wan=\"' +
       Trim(Edit3.Text) + '\"/g" /etc/squid/bastion.sh'], S) then
@@ -355,18 +277,10 @@ begin
     if SMBCheckBox.Checked then
     begin
       Memo3.Lines.SaveToFile('/etc/squid/samba-start');
-
-      if RunCommand('/bin/bash',
-        ['-c', 'cp -f /etc/squid/recycle-cleaner.sh /etc/cron.monthly/recycle-cleaner.sh; '
-        + 'chmod 755 /etc/cron.monthly/recycle-cleaner.sh'], S) then
-
-        SambaConf;
+      SambaConf;
     end
     else
-    begin
       DeleteFile('/etc/squid/samba-start');
-      DeleteFile('/etc/cron.monthly/recycle-cleaner.sh');
-    end;
 
     Application.ProcessMessages;
 

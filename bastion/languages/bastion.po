@@ -107,3 +107,7 @@ msgstr ""
 msgid "Create a new squid.der certificate for installation on clients computers?"
 msgstr ""
 
+#: unit1.snolanip
+msgid "LAN is set incorrectly!"
+msgstr ""
+
