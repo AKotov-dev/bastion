@@ -265,7 +265,7 @@ begin
 
     if not DirectoryExists(GetUserDir + '.config') then
       MkDir(GetUserDir + '/.config');
-    XMLPropStorage1.FileName := GetUserDir + '/.config/bastion.conf';
+    XMLPropStorage1.FileName := GetUserDir + '.config/bastion.conf';
 
     //Чтение/отображение данных из файлов конфигураций
     ReadParams;
@@ -309,7 +309,8 @@ begin
     //Конфигурация и запуск DNSMasq (флаг запуска dnsmasq-start для /etc/squid/bastion.sh)
     if DNSCheckBox.Checked then
     begin
-      Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
+      //Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
+      if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/dnsmasq-start'], S) then
       DNSMasqConf;
     end
     else
@@ -318,7 +319,8 @@ begin
     //Конфигурация и запуск Samba (флаг запуска samba-start для /etc/squid/bastion.sh)
     if SMBCheckBox.Checked then
     begin
-      Memo3.Lines.SaveToFile('/etc/squid/samba-start');
+     // Memo3.Lines.SaveToFile('/etc/squid/samba-start');
+      if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/samba-start'], S) then
       SambaConf;
     end
     else

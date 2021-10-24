@@ -509,6 +509,7 @@ object MainForm: TMainForm
     Top = 136
   end
   object OpenDialog1: TOpenDialog
+    Filter = 'Backup files (*.tar.gz)|*.tar.gz'
     Left = 392
     Top = 136
   end
