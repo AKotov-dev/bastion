@@ -62,11 +62,17 @@ end;
 //Нет прогресса
 procedure StartTRDCommand.HideProgress;
 begin
+  Screen.Cursor:=crDefault;
   with MainForm do
   begin
     ProgressBar1.Style := pbstNormal;
     NewCertBtn.Enabled := True;
     RestartBtn.Enabled := True;
+
+    //BlackList/WhiteList/Vip-Users
+    Memo1.Lines.LoadFromFile('/etc/squid/blacklist.txt');
+    Memo3.Lines.LoadFromFile('/etc/squid/whitelist.txt');
+    Memo2.Lines.LoadFromFile('/etc/squid/vip-users.txt');
   end;
 end;
 
