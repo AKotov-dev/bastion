@@ -309,8 +309,8 @@ begin
     //Конфигурация и запуск DNSMasq (флаг запуска dnsmasq-start для /etc/squid/bastion.sh)
     if DNSCheckBox.Checked then
     begin
-      Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
-     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/dnsmasq-start'], S) then
+      //Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
+      if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/dnsmasq-start'], S) then
       DNSMasqConf;
     end
     else
@@ -319,8 +319,8 @@ begin
     //Конфигурация и запуск Samba (флаг запуска samba-start для /etc/squid/bastion.sh)
     if SMBCheckBox.Checked then
     begin
-      Memo3.Lines.SaveToFile('/etc/squid/samba-start');
-     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/samba-start'], S) then
+     // Memo3.Lines.SaveToFile('/etc/squid/samba-start');
+      if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/samba-start'], S) then
       SambaConf;
     end
     else

@@ -166,12 +166,12 @@ object MainForm: TMainForm
       AnchorSideTop.Control = Edit1
       AnchorSideRight.Control = RestartBtn
       AnchorSideBottom.Side = asrBottom
-      Left = 570
+      Left = 568
       Height = 30
       Top = 5
       Width = 163
       Anchors = [akTop, akRight]
-      BorderSpacing.Right = 2
+      BorderSpacing.Right = 4
       Caption = 'New Certificate'
       OnClick = NewCertBtnClick
       TabOrder = 3
@@ -328,63 +328,68 @@ object MainForm: TMainForm
       AnchorSideLeft.Control = WWWLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = WWWLabel
-      Left = 15
-      Height = 8
-      Top = 54
-      Width = 15
+      Left = 16
+      Height = 12
+      Top = 50
+      Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
       Brush.Color = clYellow
       ParentShowHint = False
+      Shape = stCircle
     end
     object IPTablesSh: TShape
       AnchorSideLeft.Control = IPTablesLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = IPTablesLabel
-      Left = 68
-      Height = 8
-      Top = 54
-      Width = 15
+      Left = 69
+      Height = 12
+      Top = 50
+      Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
       Brush.Color = clYellow
+      Shape = stCircle
     end
     object SquidSh: TShape
       AnchorSideLeft.Control = SquidLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = SquidLabel
-      Left = 121
-      Height = 8
-      Top = 54
-      Width = 15
+      Left = 122
+      Height = 12
+      Top = 50
+      Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
       Brush.Color = clYellow
+      Shape = stCircle
     end
     object ApacheSh: TShape
       AnchorSideLeft.Control = ApacheLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = ApacheLabel
-      Left = 172
-      Height = 8
-      Top = 54
-      Width = 15
+      Left = 173
+      Height = 12
+      Top = 50
+      Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
       Brush.Color = clYellow
+      Shape = stCircle
     end
     object DNSMasqSh: TShape
       AnchorSideLeft.Control = DNSCheckBox
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = ApacheSh
       AnchorSideBottom.Side = asrCenter
-      Left = 250
-      Height = 8
-      Top = 54
-      Width = 15
+      Left = 251
+      Height = 12
+      Top = 50
+      Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Left = 3
       Brush.Color = clYellow
+      Shape = stCircle
     end
     object SMBCheckBox: TCheckBox
       AnchorSideLeft.Control = DNSCheckBox
@@ -408,24 +413,25 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = ApacheSh
       AnchorSideBottom.Side = asrCenter
-      Left = 342
-      Height = 8
-      Top = 54
-      Width = 15
+      Left = 343
+      Height = 11
+      Top = 50
+      Width = 12
       Anchors = [akLeft, akBottom]
       BorderSpacing.Left = 3
       Brush.Color = clYellow
+      Shape = stCircle
     end
     object SpeedButton1: TSpeedButton
       AnchorSideTop.Control = Edit1
       AnchorSideRight.Control = NewCertBtn
-      Left = 537
+      Left = 533
       Height = 30
       Hint = 'Backup/Restore'
       Top = 5
       Width = 31
       Anchors = [akTop, akRight]
-      BorderSpacing.Right = 2
+      BorderSpacing.Right = 4
       Glyph.Data = {
         36040000424D3604000000000000360000002800000010000000100000000100
         2000000000000004000064000000640000000000000000000000000000000000
