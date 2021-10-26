@@ -18,4 +18,4 @@ Note:
 + Bastion has built-in DNS/DHCP (dnsmasq); address pool `x.x.x.50-x.x.x.250`
 + When `samba` is enabled, a shared folder `/usr/local/Common` is created with a `.recycle` bin, which is cleaned every month. The `\\LAN-IP\Common` folder can be connected as a shared disk
 
-![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot1.png)
+![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot.png)
