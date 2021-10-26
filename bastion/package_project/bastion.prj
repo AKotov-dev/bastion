@@ -2,7 +2,7 @@
 name=bastion
 
 [VERSION]
-version=1.2
+version=1.3
 
 [RELEASE]
 release=0.mga8
@@ -71,28 +71,31 @@ devtool=Lazarus
 toolversion=2.0.10
 
 [INFO]
-0=v1.2
-1=+ code optimization
-2=+ compliance check LAN=IP
-3=+ Backup and Restore configuration
-4=
-5=v1.1
-6=+ samba (shared disk)
-7=+ improved blacklist filtering
-8=
-9=v1.0 - final release
-10=
-11=v0.4
-12=+ dnsmasq (DNS/DHCP)
-13=+ dnsmasq management and control
-14=
-15=v0.3
-16=+ sorting lists
-17=+ optimization for Squid-5.x
-18=
-19=v0.2
-20=+ fixed status polling
-21=+ www indicator (ping ya.ru)
-22=+ dependencies: openssh-server & multitail
-23=
-24=v0.1 - initial version
+0=v1.3
+1=+ bastion.sh optimization
+2=
+3=v1.2
+4=+ code optimization
+5=+ compliance check LAN=IP
+6=+ Backup and Restore configuration
+7=
+8=v1.1
+9=+ samba (shared disk)
+10=+ improved blacklist filtering
+11=
+12=v1.0 - final release
+13=
+14=v0.4
+15=+ dnsmasq (DNS/DHCP)
+16=+ dnsmasq management and control
+17=
+18=v0.3
+19=+ sorting lists
+20=+ optimization for Squid-5.x
+21=
+22=v0.2
+23=+ fixed status polling
+24=+ www indicator (ping ya.ru)
+25=+ dependencies: openssh-server & multitail
+26=
+27=v0.1 - initial version
