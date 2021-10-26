@@ -62,7 +62,6 @@ end;
 //Нет прогресса
 procedure StartTRDCommand.HideProgress;
 begin
-  Screen.Cursor:=crDefault;
   with MainForm do
   begin
     ProgressBar1.Style := pbstNormal;

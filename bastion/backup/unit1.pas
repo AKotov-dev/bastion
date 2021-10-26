@@ -24,7 +24,7 @@ type
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
-    SpeedButton1: TSpeedButton;
+    BackupBtn: TSpeedButton;
     WWWSh: TShape;
     IPTablesSh: TShape;
     SquidSh: TShape;
@@ -53,7 +53,7 @@ type
     procedure RestartBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure BackupBtnClick(Sender: TObject);
     procedure StartProcess;
     procedure DNSMasqConf;
     procedure SambaConf;
@@ -220,7 +220,7 @@ begin
 end;
 
 //BackUp/Restore
-procedure TMainForm.SpeedButton1Click(Sender: TObject);
+procedure TMainForm.BackupBtnClick(Sender: TObject);
 var
   S: ansistring;
   ButtonSelected: integer;
@@ -309,8 +309,8 @@ begin
     //Конфигурация и запуск DNSMasq (флаг запуска dnsmasq-start для /etc/squid/bastion.sh)
     if DNSCheckBox.Checked then
     begin
-      //Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
-      if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/dnsmasq-start'], S) then
+      Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
+     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/dnsmasq-start'], S) then
       DNSMasqConf;
     end
     else
@@ -319,8 +319,8 @@ begin
     //Конфигурация и запуск Samba (флаг запуска samba-start для /etc/squid/bastion.sh)
     if SMBCheckBox.Checked then
     begin
-     // Memo3.Lines.SaveToFile('/etc/squid/samba-start');
-      if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/samba-start'], S) then
+      Memo3.Lines.SaveToFile('/etc/squid/samba-start');
+     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/samba-start'], S) then
       SambaConf;
     end
     else

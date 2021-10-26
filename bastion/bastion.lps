@@ -48,6 +48,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="284"/>
         <CursorPos X="8" Y="313"/>
         <UsageCount Value="39"/>
         <Loaded Value="True"/>
@@ -57,10 +59,9 @@
         <Filename Value="trd_cmd.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TRD_CMD"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="49"/>
-        <CursorPos Y="65"/>
+        <TopLine Value="48"/>
+        <CursorPos X="31" Y="69"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -68,7 +69,7 @@
         <Filename Value="status_trd.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="2"/>
+        <TopLine Value="117"/>
         <CursorPos X="31" Y="8"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
@@ -77,6 +78,7 @@
         <Filename Value="ping_trd.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
+        <TopLine Value="41"/>
         <CursorPos X="34" Y="42"/>
         <UsageCount Value="32"/>
         <Loaded Value="True"/>
@@ -90,7 +92,7 @@
         <UsageCount Value="20"/>
       </Unit5>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="unit1.pas"/>
         <Caret Line="67" Column="3" TopLine="67"/>
@@ -203,10 +205,6 @@
         <Filename Value="trd_cmd.pas"/>
         <Caret Line="66" Column="27" TopLine="49"/>
       </Position28>
-      <Position29>
-        <Filename Value="trd_cmd.pas"/>
-        <Caret Line="8" Column="29" TopLine="16"/>
-      </Position29>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

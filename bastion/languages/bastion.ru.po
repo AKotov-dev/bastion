@@ -17,6 +17,12 @@ msgctxt "tmainform.apachelabel.caption"
 msgid "apache"
 msgstr ""
 
+#: tmainform.backupbtn.hint
+#, fuzzy
+msgctxt "tmainform.backupbtn.hint"
+msgid "Backup/Restore"
+msgstr "Бэкап/Рестор"
+
 #: tmainform.caption
 msgid "Bastion"
 msgstr ""
@@ -98,10 +104,6 @@ msgstr ""
 "Включение SMB\n"
 "Общая папка: \\\\LAN-IP\\Common\n"
 
-#: tmainform.speedbutton1.hint
-msgid "Backup/Restore"
-msgstr "Бэкап/Рестор"
-
 #: tmainform.squidlabel.caption
 msgctxt "tmainform.squidlabel.caption"
 msgid "squid"
@@ -140,3 +142,4 @@ msgstr "Создать новый сертификат squid.der для уста
 #: unit1.snolanip
 msgid "LAN is set incorrectly!"
 msgstr "LAN указан неверно!"
+

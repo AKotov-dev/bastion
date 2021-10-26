@@ -6,6 +6,11 @@ msgctxt "tmainform.apachelabel.caption"
 msgid "apache"
 msgstr ""
 
+#: tmainform.backupbtn.hint
+msgctxt "tmainform.backupbtn.hint"
+msgid "Backup/Restore"
+msgstr ""
+
 #: tmainform.caption
 msgid "Bastion"
 msgstr ""
@@ -78,10 +83,6 @@ msgctxt "tmainform.smbcheckbox.hint"
 msgid ""
 "Enabling SMB\n"
 "Shared folder: \\\\LAN-IP\\Common\n"
-msgstr ""
-
-#: tmainform.speedbutton1.hint
-msgid "Backup/Restore"
 msgstr ""
 
 #: tmainform.squidlabel.caption

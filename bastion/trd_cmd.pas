@@ -54,6 +54,7 @@ begin
   with MainForm do
   begin
     ProgressBar1.Style := pbstMarquee;
+    BackupBtn.Enabled := False;
     NewCertBtn.Enabled := False;
     RestartBtn.Enabled := False;
   end;
@@ -65,6 +66,7 @@ begin
   with MainForm do
   begin
     ProgressBar1.Style := pbstNormal;
+    BackupBtn.Enabled := True;
     NewCertBtn.Enabled := True;
     RestartBtn.Enabled := True;
 
