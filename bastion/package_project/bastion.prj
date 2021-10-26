@@ -32,7 +32,7 @@ urlcopy=https://github.com/AKotov-dev/bastion
 license=GPLv3
 
 [DEPS]
-deps=iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server multitail dnsmasq samba
+deps=iptables squid ipset bind-utils apache squidanalyzer polkit sakura openssh-server multitail dnsmasq samba net-tools
 
 [META]
 meta=0
@@ -73,29 +73,30 @@ toolversion=2.0.10
 [INFO]
 0=v1.3
 1=+ bastion.sh optimization
-2=
-3=v1.2
-4=+ code optimization
-5=+ compliance check LAN=IP
-6=+ Backup and Restore configuration
-7=
-8=v1.1
-9=+ samba (shared disk)
-10=+ improved blacklist filtering
-11=
-12=v1.0 - final release
-13=
-14=v0.4
-15=+ dnsmasq (DNS/DHCP)
-16=+ dnsmasq management and control
-17=
-18=v0.3
-19=+ sorting lists
-20=+ optimization for Squid-5.x
-21=
-22=v0.2
-23=+ fixed status polling
-24=+ www indicator (ping ya.ru)
-25=+ dependencies: openssh-server & multitail
-26=
-27=v0.1 - initial version
+2=+ net-tools (rpm)
+3=
+4=v1.2
+5=+ code optimization
+6=+ compliance check LAN=IP
+7=+ Backup and Restore configuration
+8=
+9=v1.1
+10=+ samba (shared disk)
+11=+ improved blacklist filtering
+12=
+13=v1.0 - final release
+14=
+15=v0.4
+16=+ dnsmasq (DNS/DHCP)
+17=+ dnsmasq management and control
+18=
+19=v0.3
+20=+ sorting lists
+21=+ optimization for Squid-5.x
+22=
+23=v0.2
+24=+ fixed status polling
+25=+ www indicator (ping ya.ru)
+26=+ dependencies: openssh-server & multitail
+27=
+28=v0.1 - initial version

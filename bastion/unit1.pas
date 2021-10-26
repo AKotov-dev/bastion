@@ -90,7 +90,7 @@ var
 begin
   ExProcess := TProcess.Create(nil);
   try
-    ExProcess.Executable := 'sakura';  //sh или sakura
+    ExProcess.Executable := 'sakura';
     ExProcess.Parameters.Add('--font');
     ExProcess.Parameters.Add('10');
     ExProcess.Parameters.Add('--columns');
@@ -310,7 +310,6 @@ begin
     if DNSCheckBox.Checked then
     begin
       Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
-     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/dnsmasq-start'], S) then
       DNSMasqConf;
     end
     else
@@ -320,7 +319,6 @@ begin
     if SMBCheckBox.Checked then
     begin
       Memo3.Lines.SaveToFile('/etc/squid/samba-start');
-     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/samba-start'], S) then
       SambaConf;
     end
     else

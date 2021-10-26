@@ -329,8 +329,8 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = WWWLabel
       Left = 13
-      Height = 10
-      Top = 52
+      Height = 9
+      Top = 53
       Width = 18
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
@@ -342,8 +342,8 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = IPTablesLabel
       Left = 66
-      Height = 10
-      Top = 52
+      Height = 9
+      Top = 53
       Width = 18
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
@@ -354,8 +354,8 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = SquidLabel
       Left = 119
-      Height = 10
-      Top = 52
+      Height = 9
+      Top = 53
       Width = 18
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
@@ -366,8 +366,8 @@ object MainForm: TMainForm
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = ApacheLabel
       Left = 170
-      Height = 10
-      Top = 52
+      Height = 9
+      Top = 53
       Width = 18
       Anchors = [akLeft, akBottom]
       BorderSpacing.Bottom = 3
@@ -379,7 +379,7 @@ object MainForm: TMainForm
       AnchorSideBottom.Control = ApacheSh
       AnchorSideBottom.Side = asrCenter
       Left = 248
-      Height = 10
+      Height = 9
       Top = 52
       Width = 18
       Anchors = [akLeft, akBottom]
@@ -409,7 +409,7 @@ object MainForm: TMainForm
       AnchorSideBottom.Control = ApacheSh
       AnchorSideBottom.Side = asrCenter
       Left = 340
-      Height = 10
+      Height = 9
       Top = 52
       Width = 18
       Anchors = [akLeft, akBottom]
