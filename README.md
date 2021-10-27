@@ -19,4 +19,4 @@ Note:
 + When `samba` is enabled, a shared folder `/usr/local/Common` is created with a `.recycle` bin, which is cleaned every month. The `\\LAN-IP\Common` folder can be connected as a shared disk
 + If you need to use only the filtering proxy, change in the file `/etc/squid/bastion.sh`: `sysctl -w net.ipv4.ip_forward=1` to `sysctl -w net.ipv4.ip_forward=0` and click "Restart"
 
-![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot1.png)
+![](https://github.com/AKotov-dev/bastion/blob/main/ScreenShot.png)
