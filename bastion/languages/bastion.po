@@ -31,6 +31,10 @@ msgstr ""
 msgid "Local network"
 msgstr ""
 
+#: tmainform.forwardbtn.hint
+msgid "IP forwarding On/Off"
+msgstr ""
+
 #: tmainform.iptableslabel.caption
 msgctxt "tmainform.iptableslabel.caption"
 msgid "iptables"

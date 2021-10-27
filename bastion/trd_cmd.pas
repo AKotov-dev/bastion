@@ -57,6 +57,7 @@ begin
     BackupBtn.Enabled := False;
     NewCertBtn.Enabled := False;
     RestartBtn.Enabled := False;
+    ForwardBtn.Enabled := False;
   end;
 end;
 
@@ -69,6 +70,7 @@ begin
     BackupBtn.Enabled := True;
     NewCertBtn.Enabled := True;
     RestartBtn.Enabled := True;
+    ForwardBtn.Enabled := True;
 
     //BlackList/WhiteList/Vip-Users
     Memo1.Lines.LoadFromFile('/etc/squid/blacklist.txt');

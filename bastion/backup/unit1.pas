@@ -13,6 +13,7 @@ type
   { TMainForm }
 
   TMainForm = class(TForm)
+    ForwardBtn: TSpeedButton;
     DNSCheckBox: TCheckBox;
     OpenDialog1: TOpenDialog;
     SaveDialog2: TSaveDialog;
@@ -49,6 +50,7 @@ type
     StaticText1: TStaticText;
     XMLPropStorage1: TXMLPropStorage;
     procedure FormShow(Sender: TObject);
+    procedure ForwardBtnClick(Sender: TObject);
     procedure NewCertBtnClick(Sender: TObject);
     procedure RestartBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -90,7 +92,7 @@ var
 begin
   ExProcess := TProcess.Create(nil);
   try
-    ExProcess.Executable := 'sakura';  //sh или sakura
+    ExProcess.Executable := 'sakura';
     ExProcess.Parameters.Add('--font');
     ExProcess.Parameters.Add('10');
     ExProcess.Parameters.Add('--columns');
@@ -126,6 +128,13 @@ begin
   //Network
   if RunCommand('/bin/bash', ['-c', 'cat /etc/squid/localnet.txt'], S) then
     Edit1.Text := Trim(S);
+
+  //IP forwarding
+  if RunCommand('/bin/bash', ['-c',
+    'grep "sysctl -w net.ipv4.ip_forward=1" /etc/squid/bastion.sh'], S) then
+    ForwardBtn.Down := True
+  else
+    ForwardBtn.Down := False;
 
   //BlackList/WhiteList/Vip-Users
   Memo1.Lines.LoadFromFile('/etc/squid/blacklist.txt');
@@ -195,9 +204,9 @@ begin
           ['-c', 'sed -i "s/dhcp-option=option:router,.*/dhcp-option=option:router,' +
           Trim(LanIP) + '/g" /etc/dnsmasq.conf'], S) then
 
-          if RunCommand('/bin/bash',
-            ['-c', 'sed -i "s/dhcp-option=option:dns-server,.*/dhcp-option=option:dns-server,'
-            + Trim(LanIP) + '/g" /etc/dnsmasq.conf'], S) then
+          if RunCommand('/bin/bash', ['-c',
+            'sed -i "s/dhcp-option=option:dns-server,.*/dhcp-option=option:dns-server,' +
+            Trim(LanIP) + '/g" /etc/dnsmasq.conf'], S) then
 
             //Диапазон выдачи IP-адресов (аренда 72 часа)
             //Отбрасываем последний октет LanIP
@@ -310,7 +319,6 @@ begin
     if DNSCheckBox.Checked then
     begin
       Memo3.Lines.SaveToFile('/etc/squid/dnsmasq-start');
-     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/dnsmasq-start'], S) then
       DNSMasqConf;
     end
     else
@@ -320,7 +328,6 @@ begin
     if SMBCheckBox.Checked then
     begin
       Memo3.Lines.SaveToFile('/etc/squid/samba-start');
-     // if RunCommand('/bin/bash', ['-c', 'touch /etc/squid/samba-start'], S) then
       SambaConf;
     end
     else
@@ -338,6 +345,27 @@ end;
 procedure TMainForm.FormShow(Sender: TObject);
 begin
   XMLPropStorage1.Restore;
+end;
+
+procedure TMainForm.ForwardBtnClick(Sender: TObject);
+var
+  S: ansistring;
+begin
+  if ForwardBtn.Down then
+    RunCommand('/bin/bash', ['-c',
+      'sed -i "s/sysctl -w net.ipv4.ip_forward=0/sysctl -w net.ipv4.ip_forward=1' +
+      '/g" /etc/squid/bastion.sh'], S)
+  else
+    RunCommand('/bin/bash', ['-c',
+      'sed -i "s/sysctl -w net.ipv4.ip_forward=1/sysctl -w net.ipv4.ip_forward=0' +
+      '/g" /etc/squid/bastion.sh'], S);
+
+    //IP forwarding
+  if RunCommand('/bin/bash', ['-c',
+    'grep "sysctl -w net.ipv4.ip_forward=1" /etc/squid/bastion.sh'], S) then
+    ForwardBtn.Down := True
+  else
+    ForwardBtn.Down := False;
 end;
 
 //Создание сертификата
