@@ -471,7 +471,7 @@ object MainForm: TMainForm
       AnchorSideRight.Control = BackupBtn
       Left = 504
       Height = 30
-      Hint = 'IP forwarding On/Off'
+      Hint = 'IP forwarding: Down=On, UP= Off'
       Top = 5
       Width = 31
       AllowAllUp = True

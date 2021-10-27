@@ -18,7 +18,6 @@ msgid "apache"
 msgstr ""
 
 #: tmainform.backupbtn.hint
-#, fuzzy
 msgctxt "tmainform.backupbtn.hint"
 msgid "Backup/Restore"
 msgstr "Бэкап/Рестор"
@@ -46,8 +45,8 @@ msgid "Local network"
 msgstr "Локальная сеть"
 
 #: tmainform.forwardbtn.hint
-msgid "IP forwarding On/Off"
-msgstr ""
+msgid "IP forwarding: Down=On, UP=Off"
+msgstr "IP форвардинг: Нажата=Вкл, Отжата=Выкл"
 
 #: tmainform.iptableslabel.caption
 msgctxt "tmainform.iptableslabel.caption"
@@ -146,4 +145,3 @@ msgstr "Создать новый сертификат squid.der для уста
 #: unit1.snolanip
 msgid "LAN is set incorrectly!"
 msgstr "LAN указан неверно!"
-

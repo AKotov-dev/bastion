@@ -32,7 +32,7 @@ msgid "Local network"
 msgstr ""
 
 #: tmainform.forwardbtn.hint
-msgid "IP forwarding On/Off"
+msgid "IP forwarding: Down=On, UP=Off"
 msgstr ""
 
 #: tmainform.iptableslabel.caption

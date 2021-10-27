@@ -359,13 +359,6 @@ begin
     RunCommand('/bin/bash', ['-c',
       'sed -i "s/sysctl -w net.ipv4.ip_forward=1/sysctl -w net.ipv4.ip_forward=0' +
       '/g" /etc/squid/bastion.sh'], S);
-
-    //IP forwarding
-  if RunCommand('/bin/bash', ['-c',
-    'grep "sysctl -w net.ipv4.ip_forward=1" /etc/squid/bastion.sh'], S) then
-    ForwardBtn.Down := True
-  else
-    ForwardBtn.Down := False;
 end;
 
 //Создание сертификата
